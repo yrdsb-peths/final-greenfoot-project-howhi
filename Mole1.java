@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * One of the moles to whack.
+ * The animated mole on the title screen.
  * 
  * @author Ho
  * @version May 2024
