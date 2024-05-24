@@ -20,5 +20,8 @@ public class TitleScreen extends World
         
         Mole1 mole1 = new Mole1();
         addObject(mole1, 300, 245);
+        
+        Label titleLabel = new Label("Connor's\nWhac-a-Mole!", 50);
+        addObject(titleLabel, 300, 125);
     }
 }

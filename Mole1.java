@@ -16,7 +16,7 @@ public class Mole1 extends Actor
         for(int i = 0; i < mole1Animation.length; i++)
         {
             mole1Animation[i] = new GreenfootImage("images/Mole1_Animate/mole1_animate" + i + ".png");
-            mole1Animation[i].scale(100, 100);
+            mole1Animation[i].scale(75, 75);
         }
         
         animationTimer.mark();
