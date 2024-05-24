@@ -19,6 +19,6 @@ public class TitleScreen extends World
         super(600, 300, 1); 
         
         Mole1 mole1 = new Mole1();
-        addObject(mole1, 300, 190);
+        addObject(mole1, 300, 240);
     }
 }
