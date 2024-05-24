@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class TitleScreen extends World
 {
-
+    SimpleTimer instructionsTimer = new SimpleTimer();
+    
     /**
      * Constructor for objects of class TitleScreen.
      * 
@@ -19,9 +20,9 @@ public class TitleScreen extends World
         super(600, 300, 1); 
         
         Mole1 mole1 = new Mole1();
-        addObject(mole1, 300, 245);
+        addObject(mole1, getWidth() / 2, 245);
         
         Label titleLabel = new Label("Connor's\nWhac-a-Mole!", 50);
-        addObject(titleLabel, 300, 125);
+        addObject(titleLabel, getWidth() / 2, 125);
     }
 }
