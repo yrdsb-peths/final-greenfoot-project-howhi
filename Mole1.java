@@ -30,7 +30,6 @@ public class Mole1 extends Actor
     public void act()
     {
         // Add your action code here.
-        
         animateMole1();
     }
     
@@ -43,10 +42,7 @@ public class Mole1 extends Actor
         }
         
         animationTimer.mark();
-        {
-            setImage(mole1Animation[imageIndex]);
-            imageIndex = (imageIndex + 1) % mole1Animation.length;
-        }
-        
+        setImage(mole1Animation[imageIndex]);
+        imageIndex = (imageIndex + 1) % mole1Animation.length;        
     }
 }
