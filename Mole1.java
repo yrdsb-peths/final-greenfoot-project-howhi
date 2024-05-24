@@ -8,34 +8,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Mole1 extends Actor
 {
-    GreenfootImage[] mole1Animation1 = new GreenfootImage[3];
-    GreenfootImage[] mole1Animation2 = new GreenfootImage[3];
-    GreenfootImage[] mole1Animation3 = new GreenfootImage[3];
-    
+    GreenfootImage[] mole1Animation = new GreenfootImage[9];    
     
     SimpleTimer animationTimer = new SimpleTimer();
     public Mole1()
     {
-        for(int i = 0; i < mole1Animation1.length; i++)
+        for(int i = 0; i < mole1Animation.length; i++)
         {
-            mole1Animation1[i] = new GreenfootImage("images/Mole_Animate(1)/tile00" + i + ".png");
-            mole1Animation1[i].scale(100, 100);
-        }
-        
-        for(int i = 0; i < mole1Animation2.length; i++)
-        {
-            mole1Animation2[i] = new GreenfootImage("images/Mole_Animate(2)/tile00" + i + ".png");
-            mole1Animation2[i].scale(100, 100);
-        }
-        
-        for(int i = 0; i < mole1Animation3.length; i++)
-        {
-            mole1Animation3[i] = new GreenfootImage("images/Mole_Animate(3)/tile00" + i + ".png");
-            mole1Animation3[i].scale(100, 100);
+            mole1Animation[i] = new GreenfootImage("images/Mole1_Animate/mole1_animate" + i + ".png");
+            mole1Animation[i].scale(100, 100);
         }
         
         animationTimer.mark();
-        setImage(mole1Animation1[0]);
+        setImage(mole1Animation[0]);
     }
     
     /**
@@ -57,8 +42,8 @@ public class Mole1 extends Actor
         
         animationTimer.mark();
         {
-            setImage(mole1Animation1[imageIndex]);
-            imageIndex = (imageIndex + 1) % mole1Animation1.length;
+            setImage(mole1Animation[imageIndex]);
+            imageIndex = (imageIndex + 1) % mole1Animation.length;
         }
         
     }
