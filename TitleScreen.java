@@ -14,28 +14,33 @@ public class TitleScreen extends World
      * Constructor for objects of class TitleScreen.
      * 
      */
+    Label titleLabel = new Label("Connor's\nWhac-a-Mole!", 75);
+
     public TitleScreen()
     {    
         // Create a new world with 600x300 cells with a cell size of 1x1 pixels.
         super(600, 300, 1); 
-        
-        instructionsTimer.mark();
+             
         
         Mole1 mole1 = new Mole1();
         addObject(mole1, getWidth() / 2, 245);
         
-        Label titleLabel = new Label("Connor's\nWhac-a-Mole!", 50);
-        addObject(titleLabel, getWidth() / 2, 125);
+        addObject(titleLabel, getWidth() / 2, 125);   
         
+        instructionsTimer.mark();
+        
+    }
+    
+    
+    public void act()
+    {        
         
         if(instructionsTimer.millisElapsed() < 5000)
         {
             return;
         }
-        
         removeObject(titleLabel);
-        
-        Label instructionsLabel = new Label("Click mouse on as many moles in 30 seconds!\nPress <Enter> to Start", 25);
+        Label instructionsLabel = new Label("Click mouse on as many\nmoles in 30 seconds!\nPress <Enter> to Start", 45);
         addObject(instructionsLabel, getWidth() / 2, 100);
     }
 }
