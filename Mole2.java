@@ -13,11 +13,17 @@ public class Mole2 extends Animal
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    GreenfootImage[] mole1Animation = new GreenfootImage[9];    
+    GreenfootImage[] mole2Animation = new GreenfootImage[9];    
     
     public Mole2()
     {
-        setImage(mole1Animation[8]);
+        setImage(mole2Animation[8]);
+        
+        for(int i = 0; i < mole2Animation.length; i++)
+        {
+            mole2Animation[i] = new GreenfootImage("images/Mole_Animate/mole_animate" + i + ".png");
+            mole2Animation[i].scale(75, 75);
+        }
         
         
     }
