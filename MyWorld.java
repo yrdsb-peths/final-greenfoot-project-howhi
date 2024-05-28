@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
+    public int diceRoll;
+    SimpleTimer diceRollTimer = new SimpleTimer();
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -17,5 +18,17 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x300 cells with a cell size of 1x1 pixels.
         super(600, 300, 1);
+    }
+    
+    public void act()
+    {
+        diceRollTimer.mark();
+        
+        if(diceRollTimer.millisElapsed() < 2000)
+        {
+            return;
+        }
+        
+        diceRoll = Greenfoot.getRandomNumber(6);
     }
 }
