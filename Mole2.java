@@ -26,30 +26,43 @@ public class Mole2 extends Animal
             mole2Animation[i].scale(100, 100);
         }
         
-        animationMole2Timer.mark();
         setImage(mole2Animation[8]);
+        animationMole2Timer.mark();
     }
     
     
     public void act()
-    {
-        animateMole2();
+    {        
+        if(gameWorld.diceRoll == 0)
+        {
+            manifestMole2();
+        }
         
-        if(Greenfoot.mouseClicked(this))
+        if(animationMole2Timer.millisElapsed() < 5000)
         {
             setImage(mole2Animation[8]);
         }
-        
-        gameWorld.diceRollTimer.mark();
+        else if(Greenfoot.mouseClicked(this))
+        {
+            dazedMole2();
+            setImage(mole2Animation[8]);
+        }
     }
     
     int imageIndex = 0;
-    public void animateMole2()
+    
+    public void manifestMole2()
     {
-        if(animationMole2Timer.millisElapsed() < 100)
+        setImage(mole2Animation[0]);
+        animationMole2Timer.mark();
+    }
+    
+    public void dazedMole2()
+    {
+        if(animationMole2Timer.millisElapsed() == 100)
         {
             return;
-        }
+        }        
         
         animationMole2Timer.mark();
         setImage(mole2Animation[imageIndex]);
