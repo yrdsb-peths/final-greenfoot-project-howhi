@@ -33,11 +33,6 @@ public class Mole2 extends Animal
     
     public void act()
     {        
-        if(gameWorld.diceRoll == 0)
-        {
-            manifestMole2();
-        }
-        
         if(animationMole2Timer.millisElapsed() < 5000)
         {
             setImage(mole2Animation[8]);

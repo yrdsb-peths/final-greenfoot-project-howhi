@@ -25,6 +25,8 @@ public class MyWorld extends World
         diceRoll = 0;
         
         diceRollTimer.mark();
+        
+        generateMole2();
     }
     
     public void act()
@@ -35,5 +37,15 @@ public class MyWorld extends World
         }
         
         diceRoll = Greenfoot.getRandomNumber(6);
+    }
+    
+    public void generateMole2()
+    {
+        Mole2 mole2 = new Mole2();
+    }
+    
+    public void manifestMole2()
+    {
+        
     }
 }
