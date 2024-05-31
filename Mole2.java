@@ -41,14 +41,15 @@ public class Mole2 extends Animal
         {
             manifestMole2();
         }
-             
-        if(animationMole2Timer.millisElapsed() > 5000)
-        {
-            hideMole2();
-        }
-        else if(Greenfoot.mouseClicked(this))
+        
+
+        if(Greenfoot.mouseClicked(this))
         {
             dazedMole2();
+        }
+        else if(animationMole2Timer.millisElapsed() > 10000)
+        {
+            hideMole2();
         }
     }
     
@@ -57,31 +58,27 @@ public class Mole2 extends Animal
     public void hideMole2()
     {
         setImage(mole2Animation[8]);
-        animationMole2Timer.mark();
     }
     
     
     public void manifestMole2()
     {
         setImage(mole2Animation[0]);
-        animationMole2Timer.mark();
     }
     
-    int imageIndex = 0;
+    
     
     public void dazedMole2()
     {              
-        for(int i = 0; i < mole2Animation.length; i++)
+        int imageIndex = 0;
+        for(int i = imageIndex; i < mole2Animation.length; i++)
         {
             setImage(mole2Animation[imageIndex]);
             if(animationMole2Timer.millisElapsed() > 100)
             {
-                animationMole2Timer.mark();
                 return;
             } 
-            imageIndex = (imageIndex + 1) % mole2Animation.length; 
-                       
         }
-               
+        setImage(mole2Animation[8]);       
     }
 }
