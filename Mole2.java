@@ -18,6 +18,8 @@ public class Mole2 extends Animal
     SimpleTimer animationMole2Timer = new SimpleTimer();
     
     MyWorld gameWorld = (MyWorld) getWorld();
+    
+    
     public Mole2()
     {
         for(int i = 0; i < mole2Animation.length; i++)
@@ -26,8 +28,10 @@ public class Mole2 extends Animal
             mole2Animation[i].scale(100, 75);
         }
         
-        setImage(mole2Animation[8]);
         animationMole2Timer.mark();
+        
+        
+        setImage(mole2Animation[8]);
     }
     
     
@@ -36,13 +40,11 @@ public class Mole2 extends Animal
         if(animationMole2Timer.millisElapsed() > 5000)
         {
             manifestMole2();
-            animationMole2Timer.mark();
         }
-        
+             
         if(animationMole2Timer.millisElapsed() > 5000)
         {
             hideMole2();
-            animationMole2Timer.mark();
         }
         else if(Greenfoot.mouseClicked(this))
         {
@@ -50,30 +52,35 @@ public class Mole2 extends Animal
         }
     }
     
-    int imageIndex = 0;
+    
     
     public void hideMole2()
     {
         setImage(mole2Animation[8]);
+        animationMole2Timer.mark();
     }
+    
+    
     public void manifestMole2()
     {
         setImage(mole2Animation[0]);
+        animationMole2Timer.mark();
     }
     
+    int imageIndex = 0;
+    
     public void dazedMole2()
-    {       
-        animationMole2Timer.mark();
-        
+    {              
         for(int i = 0; i < mole2Animation.length; i++)
         {
             setImage(mole2Animation[imageIndex]);
-            imageIndex = (imageIndex + 1) % mole2Animation.length; 
-            if(animationMole2Timer.millisElapsed() == 100)
+            if(animationMole2Timer.millisElapsed() > 100)
             {
                 animationMole2Timer.mark();
                 return;
-            }            
+            } 
+            imageIndex = (imageIndex + 1) % mole2Animation.length; 
+                       
         }
                
     }
