@@ -45,7 +45,7 @@ public class Mole2 extends Animal
 
         if(Greenfoot.mouseClicked(this))
         {
-            dazedMole2();
+            dazeMole2();
         }
         else if(animationMole2Timer.millisElapsed() > 10000)
         {
@@ -68,7 +68,7 @@ public class Mole2 extends Animal
     
     
     
-    public void dazedMole2()
+    public void dazeMole2()
     {              
         int imageIndex = 0;
         for(int i = imageIndex; i < mole2Animation.length; i++)
@@ -78,7 +78,6 @@ public class Mole2 extends Animal
             {
                 return;
             } 
-        }
-        setImage(mole2Animation[8]);       
+        }    
     }
 }
