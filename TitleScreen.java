@@ -34,8 +34,7 @@ public class TitleScreen extends World
     
     public void act()
     {        
-        
-        if(instructionsTimer.millisElapsed() < 5000)
+        if(instructionsTimer.millisElapsed() < 2000)
         {
             return;
         }
