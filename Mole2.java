@@ -73,6 +73,7 @@ public class Mole2 extends Animal
         int imageIndex = 0;
         for(int i = imageIndex; i < mole2Animation.length; i++)
         {
+            animationMole2Timer.mark();
             setImage(mole2Animation[imageIndex]);
             if(animationMole2Timer.millisElapsed() > 100)
             {
