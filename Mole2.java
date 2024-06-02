@@ -39,18 +39,24 @@ public class Mole2 extends Animal
     
     public void act()
     {        
-        /*
-         * if(animationMole2Timer.millisElapsed() > 5000)
+        /**
+         *  if(animationMole2Timer.millisElapsed() > 2000)
             {
                 manifestMole2();
-            }   
+            }
          */
         
         if(Greenfoot.mouseClicked(this))
         {
             dazeMole2();
         }
-        
+        /**
+         * else if(animationMole2Timer.millisElapsed() > 5000)
+            {
+                hideMole2();
+                animationMole2Timer.mark();
+            }
+         */
     }
     
     
