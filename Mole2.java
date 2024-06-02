@@ -75,13 +75,13 @@ public class Mole2 extends Animal
 
     public void dazeMole2()
     {
-        dazeMole2Timer.mark();
-        if(dazeMole2Timer.millisElapsed() > 1000)
+        if(dazeMole2Timer.millisElapsed() < 100)
         {
             return;
         }
-        dazeMole2Timer.mark();
         setImage(mole2Animation[imageIndex]);
-        imageIndex = (imageIndex + 1) % mole2Animation.length; 
+        imageIndex = (imageIndex + 1) % mole2Animation.length;
+        dazeMole2Timer.mark();
+       
     }
 }
