@@ -33,7 +33,7 @@ public class Mole2 extends Animal
         animationMole2Timer.mark();
         
         
-        setImage(mole2Animation[0]);
+        setImage(mole2Animation[8]);
     }
     
     
@@ -69,38 +69,6 @@ public class Mole2 extends Animal
         setImage(mole2Animation[imageIndex]);
         imageIndex = (imageIndex + 1) % mole2Animation.length;
         dazeMole2Timer.mark();
-        if(dazeMole2Timer.millisElapsed() < 100)
-        {
-            return;
-        }
-        setImage(mole2Animation[imageIndex]);
-        imageIndex = (imageIndex + 1) % mole2Animation.length;
-        dazeMole2Timer.mark();
-        if(dazeMole2Timer.millisElapsed() < 100)
-        {
-            return;
-        }
-        setImage(mole2Animation[imageIndex]);
-        imageIndex = (imageIndex + 1) % mole2Animation.length;
-        dazeMole2Timer.mark();
-        if(dazeMole2Timer.millisElapsed() < 100)
-        {
-            return;
-        }
-        setImage(mole2Animation[imageIndex]);
-        imageIndex = (imageIndex + 1) % mole2Animation.length;
-        dazeMole2Timer.mark();
-        if(dazeMole2Timer.millisElapsed() < 100)
-        {
-            return;
-        }
-        setImage(mole2Animation[imageIndex]);
-        imageIndex = (imageIndex + 1) % mole2Animation.length;
-        dazeMole2Timer.mark();
-        if(dazeMole2Timer.millisElapsed() < 100)
-        {
-            return;
-        }
         
         hideMole2();
     }
