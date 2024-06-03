@@ -33,30 +33,21 @@ public class Mole2 extends Animal
         animationMole2Timer.mark();
         
         
-        setImage(mole2Animation[8]);
+        setImage(mole2Animation[0]);
     }
     
     
     public void act()
     {        
-        /**
-         *  if(animationMole2Timer.millisElapsed() > 2000)
-            {
-                manifestMole2();
-            }
-         */
-        
         if(mole2IsAnimating() == true)
         {
             dazeMole2();
         }
-        /**
-         * else if(animationMole2Timer.millisElapsed() > 5000)
-            {
-                hideMole2();
-                animationMole2Timer.mark();
-            }
-         */
+        else if(animationMole2Timer.millisElapsed() > 5000)
+        {
+            hideMole2();
+            animationMole2Timer.mark();
+        }
     }
     
     public boolean mole2IsAnimating()
@@ -67,14 +58,7 @@ public class Mole2 extends Animal
     public void hideMole2()
     {
         setImage(mole2Animation[8]);
-    }
-    
-    
-    public void manifestMole2()
-    {
-        setImage(mole2Animation[0]);
-    }
-    
+    }    
 
     public void dazeMole2()
     {
@@ -85,5 +69,39 @@ public class Mole2 extends Animal
         setImage(mole2Animation[imageIndex]);
         imageIndex = (imageIndex + 1) % mole2Animation.length;
         dazeMole2Timer.mark();
+        if(dazeMole2Timer.millisElapsed() < 100)
+        {
+            return;
+        }
+        setImage(mole2Animation[imageIndex]);
+        imageIndex = (imageIndex + 1) % mole2Animation.length;
+        dazeMole2Timer.mark();
+        if(dazeMole2Timer.millisElapsed() < 100)
+        {
+            return;
+        }
+        setImage(mole2Animation[imageIndex]);
+        imageIndex = (imageIndex + 1) % mole2Animation.length;
+        dazeMole2Timer.mark();
+        if(dazeMole2Timer.millisElapsed() < 100)
+        {
+            return;
+        }
+        setImage(mole2Animation[imageIndex]);
+        imageIndex = (imageIndex + 1) % mole2Animation.length;
+        dazeMole2Timer.mark();
+        if(dazeMole2Timer.millisElapsed() < 100)
+        {
+            return;
+        }
+        setImage(mole2Animation[imageIndex]);
+        imageIndex = (imageIndex + 1) % mole2Animation.length;
+        dazeMole2Timer.mark();
+        if(dazeMole2Timer.millisElapsed() < 100)
+        {
+            return;
+        }
+        
+        hideMole2();
     }
 }
