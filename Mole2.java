@@ -46,7 +46,7 @@ public class Mole2 extends Animal
             }
          */
         
-        if(Greenfoot.mouseClicked(this))
+        if(mole2IsAnimating() == true)
         {
             dazeMole2();
         }
@@ -59,7 +59,10 @@ public class Mole2 extends Animal
          */
     }
     
-    
+    public boolean mole2IsAnimating()
+    {
+        return Greenfoot.mouseClicked(this);
+    }
     
     public void hideMole2()
     {
@@ -82,6 +85,5 @@ public class Mole2 extends Animal
         setImage(mole2Animation[imageIndex]);
         imageIndex = (imageIndex + 1) % mole2Animation.length;
         dazeMole2Timer.mark();
-       
     }
 }
