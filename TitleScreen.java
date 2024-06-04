@@ -20,7 +20,6 @@ public class TitleScreen extends World
     {    
         // Create a new world with 600x300 cells with a cell size of 1x1 pixels.
         super(600, 300, 1); 
-             
         
         Mole1 mole1 = new Mole1();
         addObject(mole1, getWidth() / 2, 245);
@@ -28,7 +27,6 @@ public class TitleScreen extends World
         addObject(titleLabel, getWidth() / 2, 125);   
         
         instructionsTimer.mark();
-        
     }
     
     

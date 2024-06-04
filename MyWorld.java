@@ -10,8 +10,10 @@ public class MyWorld extends World
 {
     public int diceRoll;
     SimpleTimer diceRollTimer = new SimpleTimer();
+    SimpleTimer currentTimeTimer = new SimpleTimer();
     
     public int score = 0;
+    public int time = 5;
     Label scoreLabel;
     Label currentScoreValue;
     Label currentTimeLabel;
@@ -34,8 +36,10 @@ public class MyWorld extends World
         currentTimeLabel = new Label("Time: ", 50);
         addObject(currentTimeLabel, getWidth() * 3 / 4, 40);
         
-        currentTimeValue = new Label(60, 50);
+        currentTimeValue = new Label(5, 50);
         addObject(currentTimeValue, 530, 40);
+        
+        currentTimeTimer.mark();
         
         diceRoll = 0;
         
@@ -46,6 +50,18 @@ public class MyWorld extends World
     
     public void act()
     {
+        if(currentTimeTimer.millisElapsed() > 1000)
+        {
+            decreaseTime();
+            currentTimeTimer.mark();
+        }
+        
+        if(time < 0)
+        {
+            GameEndsWorld gameEndsWorld = new GameEndsWorld();
+            Greenfoot.setWorld(gameEndsWorld);
+        }
+        
         if(diceRollTimer.millisElapsed() < 5000)
         {
             return;
@@ -60,6 +76,12 @@ public class MyWorld extends World
         currentScoreValue.setValue(score);
     }
     
+    
+    public void decreaseTime()
+    {
+        time--;
+        currentTimeValue.setValue(time);
+    }
     public void generateMole2()
     {
         Mole2 mole2 = new Mole2();
