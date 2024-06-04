@@ -148,12 +148,18 @@ public class MyWorld extends World
     
     public void prepareMoles()
     {
-        Mole2 preparedMole2 = new Mole2();
-        Mole3 preparedMole3 = new Mole3();
-        Mole4 preparedMole4 = new Mole4();
-        Mole5 preparedMole5 = new Mole5();
-        Mole6 preparedMole6 = new Mole6();
-        Mole7 preparedMole7 = new Mole7();
+        HiddenMole hiddenMole2 = new HiddenMole();
+        HiddenMole hiddenMole3 = new HiddenMole();
+        HiddenMole hiddenMole4 = new HiddenMole();
+        HiddenMole hiddenMole5 = new HiddenMole();
+        HiddenMole hiddenMole6 = new HiddenMole();
+        HiddenMole hiddenMole7 = new HiddenMole();
         
+        addObject(hiddenMole2, getWidth() / 4, getHeight() / 3);  
+        addObject(hiddenMole3, getWidth() / 2, getHeight() / 3);
+        addObject(hiddenMole4, getWidth() * 3 / 4, getHeight() / 3);
+        addObject(hiddenMole5, getWidth() / 4, getHeight() * 2 / 3);
+        addObject(hiddenMole6, getWidth() / 2, getHeight() * 2 / 3);
+        addObject(hiddenMole7, getWidth() * 3 / 4, getHeight() * 2 / 3);
     }
 }
