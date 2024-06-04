@@ -30,7 +30,6 @@ public class Mole6 extends Animal
         
         animationMole6Timer.mark();
         
-        
         setImage(mole6Animation[0]);
     }
     

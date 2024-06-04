@@ -50,6 +50,7 @@ public class MyWorld extends World
         generateMole4();
         generateMole5();
         generateMole6();
+        generateMole7();
     }
     
     public void act()
@@ -115,5 +116,11 @@ public class MyWorld extends World
     {
         Mole6 mole6 = new Mole6();
         addObject(mole6, getWidth() / 2, getHeight() * 2 / 3);
+    }
+    
+    public void generateMole7()
+    {
+        Mole7 mole7 = new Mole7();
+        addObject(mole7, getWidth() * 3 / 4, getHeight() * 2 / 3);
     }
 }

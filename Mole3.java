@@ -30,7 +30,6 @@ public class Mole3 extends Animal
         
         animationMole3Timer.mark();
         
-        
         setImage(mole3Animation[0]);
     }
     
