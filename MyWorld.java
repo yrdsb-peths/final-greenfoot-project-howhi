@@ -46,6 +46,7 @@ public class MyWorld extends World
         diceRollTimer.mark();
         
         generateMole2();
+        generateMole3();
     }
     
     public void act()
@@ -82,9 +83,16 @@ public class MyWorld extends World
         time--;
         currentTimeValue.setValue(time);
     }
+    
     public void generateMole2()
     {
         Mole2 mole2 = new Mole2();
         addObject(mole2, getWidth() / 4, getHeight() / 3);        
+    }
+    
+    public void generateMole3()
+    {
+        Mole3 mole3 = new Mole3();
+        addObject(mole3, getWidth() / 2, getHeight() / 3);
     }
 }
