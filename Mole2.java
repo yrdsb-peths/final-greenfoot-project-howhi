@@ -35,7 +35,7 @@ public class Mole2 extends Animal
         animationMole2Timer.mark();
         
         
-        setImage(mole2Animation[8]);
+        setImage(mole2Animation[0]);
     }
     
     
@@ -50,13 +50,10 @@ public class Mole2 extends Animal
         {
             mole2IsAnimating = true;
         }
-        //else if(animationMole2Timer.millisElapsed() > 5000)
-        // {
-            //hideMole2();
-          //  animationMole2Timer.mark();
-        //}
-        
-        
+        else if(animationMole2Timer.millisElapsed() > 5000)
+        {
+            hideMole2();
+        }        
     }
     
     public void hideMole2()
