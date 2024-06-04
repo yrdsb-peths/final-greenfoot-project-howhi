@@ -28,10 +28,10 @@ public class MyWorld extends World
         super(600, 400, 1);
         
         scoreLabel = new Label("Score: ", 50);
-        addObject(scoreLabel, getWidth() / 7, 40);
+        addObject(scoreLabel, getWidth() / 5, 40);
         
         currentScoreValue = new Label(0, 50);
-        addObject(currentScoreValue, 170, 40);
+        addObject(currentScoreValue, 200, 40);
         
         currentTimeLabel = new Label("Time: ", 50);
         addObject(currentTimeLabel, getWidth() * 3 / 4, 40);
