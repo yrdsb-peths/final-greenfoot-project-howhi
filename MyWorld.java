@@ -8,9 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-    public int diceRoll;
+    public int timerDiceRoll;
     SimpleTimer diceRollTimer = new SimpleTimer();
     SimpleTimer currentTimeTimer = new SimpleTimer();
+    
+    public int moleDiceRoll;
     
     public int score = 0;
     public int time = 5;
@@ -18,6 +20,8 @@ public class MyWorld extends World
     Label currentScoreValue;
     Label currentTimeLabel;
     Label currentTimeValue;
+    
+    boolean aMoleIsAnimating = false;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -39,18 +43,13 @@ public class MyWorld extends World
         currentTimeValue = new Label(5, 50);
         addObject(currentTimeValue, 530, 40);
         
+        diceRollTimer.mark();
         currentTimeTimer.mark();
         
-        diceRoll = 0;
+        timerDiceRoll = 0;        
+        moleDiceRoll = 0;
         
-        diceRollTimer.mark();
-        
-        generateMole2();
-        generateMole3();
-        generateMole4();
-        generateMole5();
-        generateMole6();
-        generateMole7();
+        prepareMoles();
     }
     
     public void act()
@@ -67,12 +66,35 @@ public class MyWorld extends World
             Greenfoot.setWorld(gameEndsWorld);
         }
         
-        if(diceRollTimer.millisElapsed() < 5000)
+        if(aMoleIsAnimating == false && diceRollTimer.millisElapsed() < timerDiceRoll)
         {
-            return;
+            moleDiceRoll = Greenfoot.getRandomNumber(6);
+            
+            if(moleDiceRoll == 0)
+            {
+                generateMole2();
+            }
+            else if(moleDiceRoll == 1)
+            {
+                generateMole3();
+            }
+            else if(moleDiceRoll == 2)
+            {
+                generateMole4();
+            }
+            else if(moleDiceRoll == 3)
+            {
+                generateMole5();
+            }
+            else if(moleDiceRoll == 4)
+            {
+                generateMole6();
+            }
+            else if(moleDiceRoll == 5)
+            {
+                generateMole7();
+            }
         }
-        
-        diceRoll = Greenfoot.getRandomNumber(6);
     }
     
     public void increaseScore()
@@ -122,5 +144,16 @@ public class MyWorld extends World
     {
         Mole7 mole7 = new Mole7();
         addObject(mole7, getWidth() * 3 / 4, getHeight() * 2 / 3);
+    }
+    
+    public void prepareMoles()
+    {
+        Mole2 preparedMole2 = new Mole2();
+        Mole3 preparedMole3 = new Mole3();
+        Mole4 preparedMole4 = new Mole4();
+        Mole5 preparedMole5 = new Mole5();
+        Mole6 preparedMole6 = new Mole6();
+        Mole7 preparedMole7 = new Mole7();
+        
     }
 }
