@@ -13,7 +13,7 @@ public class MyWorld extends World
     
     public int score = 0;
     Label scoreLabel;
-    Label currentScore;
+    Label currentScoreValue;
     Label currentTimeLabel;
     Label currentTimeValue;
     /**
@@ -28,8 +28,8 @@ public class MyWorld extends World
         scoreLabel = new Label("Score: ", 50);
         addObject(scoreLabel, getWidth() / 7, 40);
         
-        currentScore = new Label(0, 50);
-        addObject(currentScore, 170, 40);
+        currentScoreValue = new Label(0, 50);
+        addObject(currentScoreValue, 170, 40);
         
         currentTimeLabel = new Label("Time: ", 50);
         addObject(currentTimeLabel, getWidth() * 3 / 4, 40);
@@ -57,7 +57,7 @@ public class MyWorld extends World
     public void increaseScore()
     {
         score++;
-        currentScore.setValue(score);
+        currentScoreValue.setValue(score);
     }
     
     public void generateMole2()
@@ -65,5 +65,4 @@ public class MyWorld extends World
         Mole2 mole2 = new Mole2();
         addObject(mole2, getWidth() / 4, getHeight() / 3);        
     }
-
 }

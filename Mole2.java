@@ -19,10 +19,6 @@ public class Mole2 extends Animal
     
     SimpleTimer dazeMole2Timer = new SimpleTimer();
     
-    MyWorld gameWorld = (MyWorld) getWorld();
-
-    
-    
     boolean mole2IsAnimating = false;
     public Mole2()
     {
@@ -46,9 +42,11 @@ public class Mole2 extends Animal
             dazeMole2();
         }
         
-        if(Greenfoot.mouseClicked(this))
+        if(Greenfoot.mouseClicked(this) && this.getImage() == mole2Animation[0])
         {
             mole2IsAnimating = true;
+            MyWorld gameWorld = (MyWorld) getWorld();
+            gameWorld.increaseScore();
         }
         else if(animationMole2Timer.millisElapsed() > 5000)
         {
@@ -74,8 +72,8 @@ public class Mole2 extends Animal
         
         if(imageIndex == 8)
         {
-            setImage(mole2Animation[8]);
             mole2IsAnimating = false;
+            setImage(mole2Animation[8]);
         }
     }
 }
