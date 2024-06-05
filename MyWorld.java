@@ -49,7 +49,12 @@ public class MyWorld extends World
         timerDiceRoll = 5000;        
         moleDiceRoll = 0;
         
-        prepareMoles();
+        addHiddenMole2();
+        addHiddenMole3();
+        addHiddenMole4();
+        addHiddenMole5();
+        addHiddenMole6();
+        addHiddenMole7();
     }
     
     public void act()
@@ -68,6 +73,7 @@ public class MyWorld extends World
         
         if(aMoleIsAnimating == false && diceRollTimer.millisElapsed() > timerDiceRoll)
         {
+            aMoleIsAnimating = true;
             moleDiceRoll = Greenfoot.getRandomNumber(6);
             diceRollTimer.mark();
             if(moleDiceRoll == 0)
@@ -100,7 +106,6 @@ public class MyWorld extends World
                 removeHiddenMole7();
                 generateMole7();
             }
-            aMoleIsAnimating = true;
         }
     }
     
@@ -152,20 +157,41 @@ public class MyWorld extends World
         Mole7 mole7 = new Mole7();
         addObject(mole7, getWidth() * 3 / 4, getHeight() * 2 / 3);
     }
-    
+
     HiddenMole hiddenMole2 = new HiddenMole();
     HiddenMole hiddenMole3 = new HiddenMole();
     HiddenMole hiddenMole4 = new HiddenMole();
     HiddenMole hiddenMole5 = new HiddenMole();
     HiddenMole hiddenMole6 = new HiddenMole();
     HiddenMole hiddenMole7 = new HiddenMole();
-    public void prepareMoles()
-    {        
-        addObject(hiddenMole2, getWidth() / 4, getHeight() / 3);  
+    
+    public void addHiddenMole2()
+    {
+        addObject(hiddenMole2, getWidth() / 4, getHeight() / 3); 
+    }
+    
+    public void addHiddenMole3()
+    {
         addObject(hiddenMole3, getWidth() / 2, getHeight() / 3);
+    }
+    
+    public void addHiddenMole4()
+    {
         addObject(hiddenMole4, getWidth() * 3 / 4, getHeight() / 3);
+    }
+    
+    public void addHiddenMole5()
+    {
         addObject(hiddenMole5, getWidth() / 4, getHeight() * 2 / 3);
+    }
+    
+    public void addHiddenMole6()
+    {
         addObject(hiddenMole6, getWidth() / 2, getHeight() * 2 / 3);
+    }
+    
+    public void addHiddenMole7()
+    {
         addObject(hiddenMole7, getWidth() * 3 / 4, getHeight() * 2 / 3);
     }
     

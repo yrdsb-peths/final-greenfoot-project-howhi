@@ -45,13 +45,13 @@ public class Mole2 extends Animal
         
         if(Greenfoot.mouseClicked(this) && this.getImage() == mole2Animation[0])
         {
-            mole2IsAnimating = true;
             gameWorld.increaseScore();
+            mole2IsAnimating = true;
         }
         else if(animationMole2Timer.millisElapsed() > 5000)
         {
             gameWorld.removeObject(this);
-            gameWorld.prepareMoles();
+            gameWorld.addHiddenMole2();
             gameWorld.aMoleIsAnimating = false;
         }        
     }  
@@ -72,7 +72,7 @@ public class Mole2 extends Animal
             mole2IsAnimating = false;
             setImage(mole2Animation[8]);
             MyWorld gameWorld = (MyWorld) getWorld();
-            gameWorld.prepareMoles();
+            gameWorld.addHiddenMole2();
             gameWorld.aMoleIsAnimating = false;
         }
     }

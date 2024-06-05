@@ -49,7 +49,7 @@ public class Mole4 extends Animal
         else if(animationMole4Timer.millisElapsed() > 5000)
         {
             gameWorld.removeObject(this);
-            gameWorld.prepareMoles();
+            gameWorld.addHiddenMole4();
             gameWorld.aMoleIsAnimating = false;
         }        
     }
@@ -70,7 +70,7 @@ public class Mole4 extends Animal
             mole4IsAnimating = false;
             setImage(mole4Animation[8]);
             MyWorld gameWorld = (MyWorld) getWorld();
-            gameWorld.prepareMoles();
+            gameWorld.addHiddenMole4();
             gameWorld.aMoleIsAnimating = false;
         }
     }
