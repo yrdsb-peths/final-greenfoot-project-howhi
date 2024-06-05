@@ -40,23 +40,17 @@ public class Mole5 extends Animal
         {
             dazeMole5();
         }
-        
+        MyWorld gameWorld = (MyWorld) getWorld();
         if(Greenfoot.mouseClicked(this) && this.getImage() == mole5Animation[0])
         {
             mole5IsAnimating = true;
-            MyWorld gameWorld = (MyWorld) getWorld();
             gameWorld.increaseScore();
         }
         else if(animationMole5Timer.millisElapsed() > 5000)
         {
-            hideMole5();
+            gameWorld.removeObject(this);
         }        
     }
-    
-    public void hideMole5()
-    {
-        setImage(mole5Animation[8]);
-    }    
     
     int imageIndex = 0;
     public void dazeMole5()

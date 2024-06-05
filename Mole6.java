@@ -40,24 +40,18 @@ public class Mole6 extends Animal
         {
             dazeMole6();
         }
-        
+        MyWorld gameWorld = (MyWorld) getWorld();
         if(Greenfoot.mouseClicked(this) && this.getImage() == mole6Animation[0])
         {
             mole6IsAnimating = true;
-            MyWorld gameWorld = (MyWorld) getWorld();
             gameWorld.increaseScore();
         }
         else if(animationMole6Timer.millisElapsed() > 5000)
         {
-            hideMole6();
+            gameWorld.removeObject(this);
         }        
     }
-    
-    public void hideMole6()
-    {
-        setImage(mole6Animation[8]);
-    }    
-    
+ 
     int imageIndex = 0;
     public void dazeMole6()
     {

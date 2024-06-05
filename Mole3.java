@@ -40,23 +40,17 @@ public class Mole3 extends Animal
         {
             dazeMole3();
         }
-        
+        MyWorld gameWorld = (MyWorld) getWorld();
         if(Greenfoot.mouseClicked(this) && this.getImage() == mole3Animation[0])
         {
             mole3IsAnimating = true;
-            MyWorld gameWorld = (MyWorld) getWorld();
             gameWorld.increaseScore();
         }
         else if(animationMole3Timer.millisElapsed() > 5000)
         {
-            hideMole3();
+            gameWorld.removeObject(this);
         }        
     }
-    
-    public void hideMole3()
-    {
-        setImage(mole3Animation[8]);
-    }    
     
     int imageIndex = 0;
     public void dazeMole3()

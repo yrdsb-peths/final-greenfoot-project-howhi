@@ -46,7 +46,7 @@ public class MyWorld extends World
         diceRollTimer.mark();
         currentTimeTimer.mark();
         
-        timerDiceRoll = 0;        
+        timerDiceRoll = 5000;        
         moleDiceRoll = 0;
         
         prepareMoles();
@@ -66,34 +66,41 @@ public class MyWorld extends World
             Greenfoot.setWorld(gameEndsWorld);
         }
         
-        if(aMoleIsAnimating == false && diceRollTimer.millisElapsed() < timerDiceRoll)
+        if(aMoleIsAnimating == false && diceRollTimer.millisElapsed() > timerDiceRoll)
         {
             moleDiceRoll = Greenfoot.getRandomNumber(6);
             
             if(moleDiceRoll == 0)
             {
+                removeHiddenMole2();
                 generateMole2();
             }
             else if(moleDiceRoll == 1)
             {
+                removeHiddenMole3();
                 generateMole3();
             }
             else if(moleDiceRoll == 2)
             {
+                removeHiddenMole4();
                 generateMole4();
             }
             else if(moleDiceRoll == 3)
             {
+                removeHiddenMole5();
                 generateMole5();
             }
             else if(moleDiceRoll == 4)
             {
+                removeHiddenMole6();
                 generateMole6();
             }
             else if(moleDiceRoll == 5)
             {
+                removeHiddenMole7();
                 generateMole7();
             }
+            aMoleIsAnimating = true;
         }
     }
     
@@ -146,20 +153,49 @@ public class MyWorld extends World
         addObject(mole7, getWidth() * 3 / 4, getHeight() * 2 / 3);
     }
     
+    HiddenMole hiddenMole2 = new HiddenMole();
+    HiddenMole hiddenMole3 = new HiddenMole();
+    HiddenMole hiddenMole4 = new HiddenMole();
+    HiddenMole hiddenMole5 = new HiddenMole();
+    HiddenMole hiddenMole6 = new HiddenMole();
+    HiddenMole hiddenMole7 = new HiddenMole();
     public void prepareMoles()
-    {
-        HiddenMole hiddenMole2 = new HiddenMole();
-        HiddenMole hiddenMole3 = new HiddenMole();
-        HiddenMole hiddenMole4 = new HiddenMole();
-        HiddenMole hiddenMole5 = new HiddenMole();
-        HiddenMole hiddenMole6 = new HiddenMole();
-        HiddenMole hiddenMole7 = new HiddenMole();
-        
+    {        
         addObject(hiddenMole2, getWidth() / 4, getHeight() / 3);  
         addObject(hiddenMole3, getWidth() / 2, getHeight() / 3);
         addObject(hiddenMole4, getWidth() * 3 / 4, getHeight() / 3);
         addObject(hiddenMole5, getWidth() / 4, getHeight() * 2 / 3);
         addObject(hiddenMole6, getWidth() / 2, getHeight() * 2 / 3);
         addObject(hiddenMole7, getWidth() * 3 / 4, getHeight() * 2 / 3);
+    }
+    
+    public void removeHiddenMole2()
+    {
+        removeObject(hiddenMole2);
+    }
+    
+    public void removeHiddenMole3()
+    {
+        removeObject(hiddenMole3);
+    }
+    
+    public void removeHiddenMole4()
+    {
+        removeObject(hiddenMole4);
+    }
+    
+    public void removeHiddenMole5()
+    {
+        removeObject(hiddenMole5);
+    }
+    
+    public void removeHiddenMole6()
+    {
+        removeObject(hiddenMole6);
+    }
+    
+    public void removeHiddenMole7()
+    {
+        removeObject(hiddenMole7);
     }
 }
