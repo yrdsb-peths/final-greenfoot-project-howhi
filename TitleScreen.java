@@ -37,7 +37,7 @@ public class TitleScreen extends World
             return;
         }
         removeObject(titleLabel);
-        Label instructionsLabel = new Label("Click mouse on as many\nmoles in 30 seconds!\nPress <Enter> to Start", 45);
+        Label instructionsLabel = new Label("Click mouse on as many\nmoles in 60 seconds!\nPress <Enter> to Start", 45);
         addObject(instructionsLabel, getWidth() / 2, 100);
         
         if(Greenfoot.isKeyDown("enter"))
