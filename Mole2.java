@@ -51,6 +51,8 @@ public class Mole2 extends Animal
         else if(animationMole2Timer.millisElapsed() > 5000)
         {
             gameWorld.removeObject(this);
+            gameWorld.prepareMoles();
+            gameWorld.aMoleIsAnimating = false;
         }        
     }  
     
