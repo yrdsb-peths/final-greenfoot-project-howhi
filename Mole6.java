@@ -70,6 +70,7 @@ public class Mole6 extends Animal
             mole6IsAnimating = false;
             setImage(mole6Animation[8]);
             MyWorld gameWorld = (MyWorld) getWorld();
+            gameWorld.removeObject(this);
             gameWorld.addHiddenMole6();
             gameWorld.aMoleIsAnimating = false;
         }

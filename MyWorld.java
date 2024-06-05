@@ -71,11 +71,11 @@ public class MyWorld extends World
             Greenfoot.setWorld(gameEndsWorld);
         }
         
-        if(aMoleIsAnimating == false && diceRollTimer.millisElapsed() > timerDiceRoll)
+        if(diceRollTimer.millisElapsed() > timerDiceRoll)
         {
+            diceRollTimer.mark();
             aMoleIsAnimating = true;
             moleDiceRoll = Greenfoot.getRandomNumber(6);
-            diceRollTimer.mark();
             if(moleDiceRoll == 0)
             {
                 removeHiddenMole2();
