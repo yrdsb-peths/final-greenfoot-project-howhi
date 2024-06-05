@@ -69,7 +69,7 @@ public class MyWorld extends World
         if(aMoleIsAnimating == false && diceRollTimer.millisElapsed() > timerDiceRoll)
         {
             moleDiceRoll = Greenfoot.getRandomNumber(6);
-            
+            diceRollTimer.mark();
             if(moleDiceRoll == 0)
             {
                 removeHiddenMole2();

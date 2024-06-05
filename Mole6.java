@@ -67,6 +67,8 @@ public class Mole6 extends Animal
         {
             mole6IsAnimating = false;
             setImage(mole6Animation[8]);
+            MyWorld gameWorld = (MyWorld) getWorld();
+            gameWorld.prepareMoles();
         }
     }
 }
