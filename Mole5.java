@@ -69,6 +69,7 @@ public class Mole5 extends Animal
             setImage(mole5Animation[8]);
             MyWorld gameWorld = (MyWorld) getWorld();
             gameWorld.prepareMoles();
+            gameWorld.aMoleIsAnimating = false;
         }
     }
 }

@@ -69,6 +69,7 @@ public class Mole4 extends Animal
             setImage(mole4Animation[8]);
             MyWorld gameWorld = (MyWorld) getWorld();
             gameWorld.prepareMoles();
+            gameWorld.aMoleIsAnimating = false;
         }
     }
 }
