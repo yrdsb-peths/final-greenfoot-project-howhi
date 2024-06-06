@@ -47,7 +47,7 @@ public class MyWorld extends World
         diceRollTimer.mark();
         currentTimeTimer.mark();
         
-        timerDiceRoll = Greenfoot.getRandomNumber(5000);        
+        timerDiceRoll = 3000;        
         moleDiceRoll = 0;
         
         addHiddenMole2();
@@ -72,7 +72,7 @@ public class MyWorld extends World
             Greenfoot.setWorld(gameEndsWorld);
         }
         
-        if(diceRollTimer.millisElapsed() > timerDiceRoll)
+        if(aMoleIsAnimating == false && diceRollTimer.millisElapsed() > timerDiceRoll)
         {
             diceRollTimer.mark();
             aMoleIsAnimating = true;
@@ -108,11 +108,6 @@ public class MyWorld extends World
                 generateMole7();
             }
         }
-        
-        if(aMoleIsAnimating == false)
-        {
-            Greenfoot.getRandomNumber(5000);
-        }
     }
     
     public void increaseScore()
@@ -120,7 +115,11 @@ public class MyWorld extends World
         score++;
         GameEndsWorld gameEndsWorld = new GameEndsWorld();
         gameEndsWorld.score++;
-        gameEndsWorld.highScore++;
+        
+        if(gameEndsWorld.score > gameEndsWorld.highScore)
+        {
+            gameEndsWorld.highScore = gameEndsWorld.score;
+        }
         currentScoreValue.setValue(score);
     }
     

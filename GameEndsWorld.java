@@ -43,11 +43,6 @@ public class GameEndsWorld extends World
     
     public void act()
     {
-        if(score > highScore)
-        {
-            highScore = score;
-        }
-        
         if(Greenfoot.isKeyDown("enter"))
         {
             score = 0;
