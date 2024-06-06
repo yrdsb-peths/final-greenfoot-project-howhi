@@ -13,9 +13,9 @@ public class MyWorld extends World
     SimpleTimer currentTimeTimer = new SimpleTimer();
     
     public int moleDiceRoll;
-    
+    public static int highScore = 0;
     public int score = 0;
-    public int time = 5;
+    public int time = 8;
     Label scoreLabel;
     Label currentScoreValue;
     Label currentTimeLabel;
@@ -40,7 +40,7 @@ public class MyWorld extends World
         currentTimeLabel = new Label("Time: ", 50);
         addObject(currentTimeLabel, getWidth() * 3 / 4, 40);
         
-        currentTimeValue = new Label(5, 50);
+        currentTimeValue = new Label(8, 50);
         addObject(currentTimeValue, 530, 40);
         
         diceRollTimer.mark();
@@ -113,8 +113,17 @@ public class MyWorld extends World
     {
         score++;
         currentScoreValue.setValue(score);
+        
+        if(score > highScore)
+        {
+            highScore = score;
+        }
     }
     
+    public int currentScore()
+    {
+        return score;
+    }
     
     public void decreaseTime()
     {
