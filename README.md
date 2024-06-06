@@ -18,5 +18,3 @@ Sprite sheet cutter: https://ezgif.com/
 
 MyWorld Background: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F358317714080617664%2F&psig=AOvVaw3NAYOU_Ti8RMBSfVzDbUn4&ust=1716991784597000&source=images&cd=vfe&opi=89978449&ved=0CBIQjhxqFwoTCPCC-fzCsIYDFQAAAAAdAAAAABAE
 
-GameEndsWorld Background:
-https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3Dcartoon%2Bgrass&psig=AOvVaw2cChhphAcMf62Bzaxbows5&ust=1717599026654000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCJDF74-ZwoYDFQAAAAAdAAAAABAE 
