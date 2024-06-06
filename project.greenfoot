@@ -1,5 +1,5 @@
 #Greenfoot project file
-class.GameEndsWorld.image=TitleScreen\ Grass\ Background.jpg
+class.GameEndsWorld.image=TitleScreen\ Grass\ &\ GameEndsWorld\ Background.jpg
 class.HiddenMole.image=mole1_animate0.png
 class.Mole1.image=mole1_animate0.png
 class.Mole2.image=mole1_animate0.png
@@ -9,7 +9,7 @@ class.Mole5.image=mole1_animate0.png
 class.Mole6.image=mole1_animate0.png
 class.Mole7.image=mole1_animate0.png
 class.MyWorld.image=MyWorld\ gameWorld\ Grass\ Background.jpg
-class.TitleScreen.image=TitleScreen\ Grass\ Background.jpg
+class.TitleScreen.image=TitleScreen\ Grass\ &\ GameEndsWorld\ Background.jpg
 dependency1.from=TitleScreen
 dependency1.to=SimpleTimer
 dependency1.type=UsesDependency
