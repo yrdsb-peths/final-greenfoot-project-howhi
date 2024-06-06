@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class GameEndsWorld extends World
 {
     public static int score;
+    public static int highScore;
     /**
      * Constructor for objects of class GameEndsWorld.
      * 
@@ -30,14 +31,10 @@ public class GameEndsWorld extends World
         Label highScoreLabel = new Label("High Score: ", 40);
         addObject(highScoreLabel, getWidth() * 3 / 4, getHeight() * 5 / 8);
         
-        MyWorld gameWorld = new MyWorld();
-        
-        int currentHighScore = gameWorld.highScore;
-        
         Label currentScoreLabel = new Label(score, 40);
         addObject(currentScoreLabel, 220, getHeight() * 5 / 8);
         
-        Label currentHighScoreLabel = new Label(currentHighScore, 40);
+        Label currentHighScoreLabel = new Label(highScore, 40);
         addObject(currentHighScoreLabel, 555, getHeight() * 5 / 8);
         
         Label replayLabel = new Label("Press <enter> to play again", 35);
@@ -46,6 +43,11 @@ public class GameEndsWorld extends World
     
     public void act()
     {
+        if(score > highScore)
+        {
+            highScore = score;
+        }
+        
         if(Greenfoot.isKeyDown("enter"))
         {
             score = 0;

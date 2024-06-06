@@ -13,7 +13,6 @@ public class MyWorld extends World
     SimpleTimer currentTimeTimer = new SimpleTimer();
     
     public int moleDiceRoll;
-    public static int highScore = 0;
     public int score;
     public int time = 60;
     Label scoreLabel;
@@ -48,7 +47,7 @@ public class MyWorld extends World
         diceRollTimer.mark();
         currentTimeTimer.mark();
         
-        timerDiceRoll = 2000;        
+        timerDiceRoll = Greenfoot.getRandomNumber(5000);        
         moleDiceRoll = 0;
         
         addHiddenMole2();
@@ -109,6 +108,11 @@ public class MyWorld extends World
                 generateMole7();
             }
         }
+        
+        if(aMoleIsAnimating == false)
+        {
+            Greenfoot.getRandomNumber(5000);
+        }
     }
     
     public void increaseScore()
@@ -116,12 +120,8 @@ public class MyWorld extends World
         score++;
         GameEndsWorld gameEndsWorld = new GameEndsWorld();
         gameEndsWorld.score++;
+        gameEndsWorld.highScore++;
         currentScoreValue.setValue(score);
-        
-        if(score > highScore)
-        {
-            highScore = score;
-        }
     }
     
     public int currentScore()
