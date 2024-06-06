@@ -14,7 +14,7 @@ public class MyWorld extends World
     
     public int moleDiceRoll;
     public static int highScore = 0;
-    public int score = 0;
+    public int score;
     public int time = 8;
     Label scoreLabel;
     Label currentScoreValue;
