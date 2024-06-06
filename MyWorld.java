@@ -15,7 +15,7 @@ public class MyWorld extends World
     public int moleDiceRoll;
     public static int highScore = 0;
     public int score;
-    public int time = 8;
+    public int time = 60;
     Label scoreLabel;
     Label currentScoreValue;
     Label currentTimeLabel;
@@ -37,18 +37,18 @@ public class MyWorld extends World
         score = 0;
         
         currentScoreValue = new Label(score, 50);
-        addObject(currentScoreValue, 200, 40);
+        addObject(currentScoreValue, 210, 40);
         
         currentTimeLabel = new Label("Time: ", 50);
         addObject(currentTimeLabel, getWidth() * 3 / 4, 40);
         
-        currentTimeValue = new Label(8, 50);
+        currentTimeValue = new Label(60, 50);
         addObject(currentTimeValue, 530, 40);
         
         diceRollTimer.mark();
         currentTimeTimer.mark();
         
-        timerDiceRoll = 5000;        
+        timerDiceRoll = 2000;        
         moleDiceRoll = 0;
         
         addHiddenMole2();
@@ -114,6 +114,8 @@ public class MyWorld extends World
     public void increaseScore()
     {
         score++;
+        GameEndsWorld gameEndsWorld = new GameEndsWorld();
+        gameEndsWorld.score++;
         currentScoreValue.setValue(score);
         
         if(score > highScore)

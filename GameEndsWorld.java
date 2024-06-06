@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GameEndsWorld extends World
 {
+    public static int score;
     /**
      * Constructor for objects of class GameEndsWorld.
      * 
@@ -33,11 +34,11 @@ public class GameEndsWorld extends World
         
         int currentHighScore = gameWorld.highScore;
         
-        Label currentScoreLabel = new Label(gameWorld.score, 40);
-        addObject(currentScoreLabel, 210, getHeight() * 5 / 8);
+        Label currentScoreLabel = new Label(score, 40);
+        addObject(currentScoreLabel, 220, getHeight() * 5 / 8);
         
         Label currentHighScoreLabel = new Label(currentHighScore, 40);
-        addObject(currentHighScoreLabel, 550, getHeight() * 5 / 8);
+        addObject(currentHighScoreLabel, 555, getHeight() * 5 / 8);
         
         Label replayLabel = new Label("Press <enter> to play again", 35);
         addObject(replayLabel, getWidth() / 2, getHeight() * 7 / 8);
@@ -47,6 +48,7 @@ public class GameEndsWorld extends World
     {
         if(Greenfoot.isKeyDown("enter"))
         {
+            score = 0;
             MyWorld gameWorld = new MyWorld();
             Greenfoot.setWorld(gameWorld);
         }
