@@ -17,7 +17,7 @@ public class GameEndsWorld extends World
         // Create a new world with 600x340 cells with a cell size of 1x1 pixels.
         super(600, 340, 1); 
         
-        Label gameEndsLabel = new Label("Game. Is. Over.", 90);
+        Label gameEndsLabel = new Label("Game. Is. Over.", 100);
         addObject(gameEndsLabel, getWidth() / 2, getHeight() * 1 / 4);
         
         Mole1 mole1 = new Mole1();
@@ -30,7 +30,7 @@ public class GameEndsWorld extends World
         addObject(highScoreLabel, getWidth() * 3 / 4, getHeight() * 5 / 8);
         
         MyWorld gameWorld = new MyWorld();
-        int currentScore = gameWorld.currentScore();
+        int currentScore = gameWorld.score;
         int currentHighScore = gameWorld.highScore;
         
         Label currentScoreLabel = new Label(currentScore, 40);
