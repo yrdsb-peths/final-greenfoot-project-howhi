@@ -30,10 +30,10 @@ public class GameEndsWorld extends World
         addObject(highScoreLabel, getWidth() * 3 / 4, getHeight() * 5 / 8);
         
         MyWorld gameWorld = new MyWorld();
-        int currentScore = gameWorld.score;
+        
         int currentHighScore = gameWorld.highScore;
         
-        Label currentScoreLabel = new Label(currentScore, 40);
+        Label currentScoreLabel = new Label(gameWorld.score, 40);
         addObject(currentScoreLabel, 210, getHeight() * 5 / 8);
         
         Label currentHighScoreLabel = new Label(currentHighScore, 40);

@@ -34,7 +34,9 @@ public class MyWorld extends World
         scoreLabel = new Label("Score: ", 50);
         addObject(scoreLabel, getWidth() / 5, 40);
         
-        currentScoreValue = new Label(0, 50);
+        score = 0;
+        
+        currentScoreValue = new Label(score, 50);
         addObject(currentScoreValue, 200, 40);
         
         currentTimeLabel = new Label("Time: ", 50);
