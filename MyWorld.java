@@ -15,7 +15,7 @@ public class MyWorld extends World
     public int moleDiceRoll;
     
     public int score = 0;
-    public int time = 60;
+    public int time = 5;
     Label scoreLabel;
     Label currentScoreValue;
     Label currentTimeLabel;
@@ -40,7 +40,7 @@ public class MyWorld extends World
         currentTimeLabel = new Label("Time: ", 50);
         addObject(currentTimeLabel, getWidth() * 3 / 4, 40);
         
-        currentTimeValue = new Label(60, 50);
+        currentTimeValue = new Label(5, 50);
         addObject(currentTimeValue, 530, 40);
         
         diceRollTimer.mark();
