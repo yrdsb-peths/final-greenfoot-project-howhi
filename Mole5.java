@@ -19,6 +19,8 @@ public class Mole5 extends Animal
     
     SimpleTimer dazeMole5Timer = new SimpleTimer();
     
+    public int hideMole5Time;
+    
     boolean mole5IsAnimating = false;
     public Mole5()
     {
@@ -29,7 +31,7 @@ public class Mole5 extends Animal
         }
         
         animationMole5Timer.mark();
-        
+        hideMole5Time = 3000;
         setImage(mole5Animation[0]);
     }
     
@@ -41,13 +43,17 @@ public class Mole5 extends Animal
         {
             dazeMole5();
         }
-        
+       
         if(Greenfoot.mouseClicked(this) && this.getImage() == mole5Animation[0])
         {
             mole5IsAnimating = true;
             gameWorld.increaseScore();
+            if(gameWorld.level % 5 == 0)
+            {
+                hideMole5Time -= 500;
+            }
         }
-        else if(animationMole5Timer.millisElapsed() > 5000)
+        else if(animationMole5Timer.millisElapsed() > hideMole5Time)
         {
             gameWorld.removeObject(this);
             gameWorld.addHiddenMole5();
@@ -58,6 +64,7 @@ public class Mole5 extends Animal
     int imageIndex = 0;
     public void dazeMole5()
     {
+        MyWorld gameWorld = (MyWorld) getWorld();
         if(dazeMole5Timer.millisElapsed() < 100)
         {
             return;
@@ -70,7 +77,6 @@ public class Mole5 extends Animal
         {
             mole5IsAnimating = false;
             setImage(mole5Animation[8]);
-            MyWorld gameWorld = (MyWorld) getWorld();
             gameWorld.removeObject(this);
             gameWorld.addHiddenMole5();
             gameWorld.aMoleIsAnimating = false;

@@ -19,6 +19,8 @@ public class Mole4 extends Animal
     
     SimpleTimer dazeMole4Timer = new SimpleTimer();
     
+    public int hideMole4Time;
+    
     boolean mole4IsAnimating = false;
     public Mole4()
     {
@@ -29,7 +31,7 @@ public class Mole4 extends Animal
         }
         
         animationMole4Timer.mark();
-        
+        hideMole4Time = 3000;
         setImage(mole4Animation[0]);
     }
     
@@ -46,8 +48,12 @@ public class Mole4 extends Animal
         {
             mole4IsAnimating = true;
             gameWorld.increaseScore();
+            if(gameWorld.level % 5 == 0)
+            {
+                hideMole4Time -= 500;
+            }
         }
-        else if(animationMole4Timer.millisElapsed() > 5000)
+        else if(animationMole4Timer.millisElapsed() > hideMole4Time)
         {
             gameWorld.removeObject(this);
             gameWorld.addHiddenMole4();
@@ -58,6 +64,7 @@ public class Mole4 extends Animal
     int imageIndex = 0;
     public void dazeMole4()
     {
+        MyWorld gameWorld = (MyWorld) getWorld();
         if(dazeMole4Timer.millisElapsed() < 100)
         {
             return;
@@ -70,7 +77,6 @@ public class Mole4 extends Animal
         {
             mole4IsAnimating = false;
             setImage(mole4Animation[8]);
-            MyWorld gameWorld = (MyWorld) getWorld();
             gameWorld.removeObject(this);
             gameWorld.addHiddenMole4();
             gameWorld.aMoleIsAnimating = false;

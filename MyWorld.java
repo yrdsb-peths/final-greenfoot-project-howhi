@@ -14,7 +14,8 @@ public class MyWorld extends World
     
     public int moleDiceRoll;
     public int score;
-    public int time = 60;
+    public int time = 90;
+    public int level = 1;
     Label scoreLabel;
     Label currentScoreValue;
     Label currentTimeLabel;
@@ -128,11 +129,11 @@ public class MyWorld extends World
             gameEndsWorld.highScore = gameEndsWorld.score;
         }
         currentScoreValue.setValue(score);
-    }
-    
-    public int currentScore()
-    {
-        return score;
+        
+        if(score % 5 == 0)
+        {
+            level++;
+        }
     }
     
     public void decreaseTime()

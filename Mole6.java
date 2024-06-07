@@ -19,6 +19,8 @@ public class Mole6 extends Animal
     
     SimpleTimer dazeMole6Timer = new SimpleTimer();
     
+    public int hideMole6Time;
+    
     boolean mole6IsAnimating = false;
     public Mole6()
     {
@@ -29,7 +31,7 @@ public class Mole6 extends Animal
         }
         
         animationMole6Timer.mark();
-        
+        hideMole6Time = 3000;
         setImage(mole6Animation[0]);
     }
     
@@ -46,8 +48,12 @@ public class Mole6 extends Animal
         {
             mole6IsAnimating = true;
             gameWorld.increaseScore();
+            if(gameWorld.level % 5 == 0)
+            {
+                hideMole6Time -= 500;
+            }
         }
-        else if(animationMole6Timer.millisElapsed() > 5000)
+        else if(animationMole6Timer.millisElapsed() > hideMole6Time)
         {
             gameWorld.removeObject(this);
             gameWorld.addHiddenMole6();
@@ -58,6 +64,7 @@ public class Mole6 extends Animal
     int imageIndex = 0;
     public void dazeMole6()
     {
+        MyWorld gameWorld = (MyWorld) getWorld();
         if(dazeMole6Timer.millisElapsed() < 100)
         {
             return;
@@ -70,7 +77,6 @@ public class Mole6 extends Animal
         {
             mole6IsAnimating = false;
             setImage(mole6Animation[8]);
-            MyWorld gameWorld = (MyWorld) getWorld();
             gameWorld.removeObject(this);
             gameWorld.addHiddenMole6();
             gameWorld.aMoleIsAnimating = false;

@@ -19,6 +19,8 @@ public class Mole2 extends Animal
     
     SimpleTimer dazeMole2Timer = new SimpleTimer();
     
+    public int hideMole2Time;
+    
     boolean mole2IsAnimating = false;
     public Mole2()
     {
@@ -29,11 +31,9 @@ public class Mole2 extends Animal
         }
         
         animationMole2Timer.mark();
-        
+        hideMole2Time = 3000;
         setImage(mole2Animation[0]);
     }
-    
-        
     
     public void act()
     {    
@@ -47,8 +47,12 @@ public class Mole2 extends Animal
         {
             gameWorld.increaseScore();
             mole2IsAnimating = true;
+            if(gameWorld.level % 5 == 0)
+            {
+                hideMole2Time -= 500;
+            }
         }
-        else if(animationMole2Timer.millisElapsed() > 5000)
+        else if(animationMole2Timer.millisElapsed() > hideMole2Time)
         {
             gameWorld.removeObject(this);
             gameWorld.addHiddenMole2();
@@ -59,6 +63,7 @@ public class Mole2 extends Animal
     int imageIndex = 0;
     public void dazeMole2()
     {
+        MyWorld gameWorld = (MyWorld) getWorld();
         if(dazeMole2Timer.millisElapsed() < 100)
         {
             return;
@@ -71,7 +76,7 @@ public class Mole2 extends Animal
         {
             mole2IsAnimating = false;
             setImage(mole2Animation[8]);
-            MyWorld gameWorld = (MyWorld) getWorld();
+            
             gameWorld.removeObject(this);
             gameWorld.addHiddenMole2();
             gameWorld.aMoleIsAnimating = false;
