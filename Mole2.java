@@ -31,14 +31,13 @@ public class Mole2 extends Animal
         }
         
         animationMole2Timer.mark();
-        setImage(mole2Animation[0]);
-        MyWorld gameWorld = new MyWorld();
-        hideMole2Time = 3000 - (gameWorld.level * 500);
+        setImage(mole2Animation[0]);        
     }
     
     public void act()
     {    
         MyWorld gameWorld = (MyWorld) getWorld();
+        hideMole2Time = 3000 - (gameWorld.level * 500);
         if(mole2IsAnimating)
         {
             dazeMole2();
@@ -53,7 +52,6 @@ public class Mole2 extends Animal
         {
             gameWorld.removeObject(this);
             gameWorld.addHiddenMole2();
-            animationMole2Timer.mark();
             gameWorld.aMoleIsAnimating = false;
         }
     }  
