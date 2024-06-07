@@ -47,7 +47,7 @@ public class MyWorld extends World
         diceRollTimer.mark();
         currentTimeTimer.mark();
         
-        timerDiceRoll = 3000;        
+        timerDiceRoll = Greenfoot.getRandomNumber(10000);        
         moleDiceRoll = 0;
         
         addHiddenMole2();
@@ -108,6 +108,8 @@ public class MyWorld extends World
                 generateMole7();
             }
         }
+        
+        timerDiceRoll = Greenfoot.getRandomNumber(10000);
     }
     
     public void increaseScore()
