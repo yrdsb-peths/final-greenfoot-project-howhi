@@ -12,6 +12,7 @@ public class Mole3 extends Animal
      * Act - do whatever the Mole3 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    GreenfootSound mole3Clicked = new GreenfootSound("Dazed Mole Sound.mp3");
     
     GreenfootImage[] mole3Animation = new GreenfootImage[9];
     
@@ -46,6 +47,7 @@ public class Mole3 extends Animal
         
         if(Greenfoot.mouseClicked(this) && this.getImage() == mole3Animation[0])
         {
+            mole3Clicked.play();
             mole3IsAnimating = true;
             gameWorld.increaseScore();
         }

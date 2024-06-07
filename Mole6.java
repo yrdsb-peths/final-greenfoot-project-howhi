@@ -13,6 +13,8 @@ public class Mole6 extends Animal
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
+    GreenfootSound mole6Clicked = new GreenfootSound("Dazed Mole Sound.mp3");
+    
     GreenfootImage[] mole6Animation = new GreenfootImage[9];
     
     SimpleTimer animationMole6Timer = new SimpleTimer();
@@ -46,6 +48,7 @@ public class Mole6 extends Animal
         
         if(Greenfoot.mouseClicked(this) && this.getImage() == mole6Animation[0])
         {
+            mole6Clicked.play();
             mole6IsAnimating = true;
             gameWorld.increaseScore();
         }
