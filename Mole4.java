@@ -36,11 +36,12 @@ public class Mole4 extends Animal
     
     public void act()
     {    
+        MyWorld gameWorld = (MyWorld) getWorld();
         if(mole4IsAnimating)
         {
             dazeMole4();
         }
-        MyWorld gameWorld = (MyWorld) getWorld();
+        
         if(Greenfoot.mouseClicked(this) && this.getImage() == mole4Animation[0])
         {
             mole4IsAnimating = true;
