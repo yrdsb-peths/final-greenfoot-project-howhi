@@ -31,8 +31,9 @@ public class Mole3 extends Animal
         }
         
         animationMole3Timer.mark();
-        hideMole3Time = 3000;
         setImage(mole3Animation[0]);
+        MyWorld gameWorld = new MyWorld();
+        hideMole3Time = 3000 - (gameWorld.level * 500);
     }
     
     
@@ -48,17 +49,14 @@ public class Mole3 extends Animal
         {
             mole3IsAnimating = true;
             gameWorld.increaseScore();
-            if(gameWorld.level % 5 == 0)
-            {
-                hideMole3Time -= 500;
-            }
         }
         else if(animationMole3Timer.millisElapsed() > hideMole3Time)
         {
             gameWorld.removeObject(this);
             gameWorld.addHiddenMole3();
+            animationMole3Timer.mark();
             gameWorld.aMoleIsAnimating = false;
-        }        
+        }
     }
     
     int imageIndex = 0;

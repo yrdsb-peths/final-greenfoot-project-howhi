@@ -43,7 +43,7 @@ public class MyWorld extends World
         currentTimeLabel = new Label("Time: ", 50);
         addObject(currentTimeLabel, getWidth() * 3 / 4, 40);
         
-        currentTimeValue = new Label(60, 50);
+        currentTimeValue = new Label(time, 50);
         addObject(currentTimeValue, 530, 40);
         
         diceRollTimer.mark();
@@ -67,6 +67,7 @@ public class MyWorld extends World
             timerDiceRoll = Greenfoot.getRandomNumber(5000);
             isTrue = false;
         }
+        
         if(currentTimeTimer.millisElapsed() > 1000)
         {
             decreaseTime();
