@@ -48,7 +48,7 @@ public class MyWorld extends World
         diceRollTimer.mark();
         currentTimeTimer.mark();
         
-        timerDiceRoll = Greenfoot.getRandomNumber(10000);        
+        timerDiceRoll = Greenfoot.getRandomNumber(5000);        
         moleDiceRoll = 0;
         
         addHiddenMole2();
@@ -63,7 +63,7 @@ public class MyWorld extends World
     {
         while(isTrue == true)
         {
-            timerDiceRoll = Greenfoot.getRandomNumber(10000);
+            timerDiceRoll = Greenfoot.getRandomNumber(5000);
             isTrue = false;
         }
         if(currentTimeTimer.millisElapsed() > 1000)
