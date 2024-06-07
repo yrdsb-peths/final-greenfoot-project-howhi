@@ -21,6 +21,7 @@ public class MyWorld extends World
     Label currentTimeValue;
     
     boolean aMoleIsAnimating = false;
+    boolean isTrue = true;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -60,6 +61,11 @@ public class MyWorld extends World
     
     public void act()
     {
+        while(isTrue == true)
+        {
+            timerDiceRoll = Greenfoot.getRandomNumber(10000);
+            isTrue = false;
+        }
         if(currentTimeTimer.millisElapsed() > 1000)
         {
             decreaseTime();
@@ -107,9 +113,8 @@ public class MyWorld extends World
                 removeHiddenMole7();
                 generateMole7();
             }
+            isTrue = true;
         }
-        
-        timerDiceRoll = Greenfoot.getRandomNumber(10000);
     }
     
     public void increaseScore()

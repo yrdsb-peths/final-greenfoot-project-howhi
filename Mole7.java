@@ -74,6 +74,7 @@ public class Mole7 extends Animal
             gameWorld.removeObject(this);
             gameWorld.addHiddenMole7();
             gameWorld.aMoleIsAnimating = false;
+            gameWorld.diceRollTimer.mark();
         }
     }
 }
