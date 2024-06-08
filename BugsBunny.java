@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class BugsBunny extends Animal
 {
-    GreenfootSound bugsBunnyOuch = new GreenfootSound();
+    GreenfootSound bugsBunnyOuch = new GreenfootSound("Bugs Bunny Ouch.mp3");
     GreenfootImage[] bugsBunnyAnimation = new GreenfootImage[3];
     
     SimpleTimer bugsBunnyTimer = new SimpleTimer();
@@ -35,8 +35,10 @@ public class BugsBunny extends Animal
         {
             animateBugsBunny();
         }
+        
         if(Greenfoot.mouseClicked(this))
         {
+            bugsBunnyOuch.play();
             bugsBunnyIsAnimating = true;
         }
     }
