@@ -25,3 +25,5 @@ https://www.spriters-resource.com/snes/bugsbunnyrabbitrampage/sheet/44964/
 
 Bugs Bunny ouch sound effect
 https://www.nonstick.com/audio/soundsource/Bugs_Bunny/ltbb_170.mp3
+
+MP3 File Audio Trimmer (for Bugs Bunny Ouch Sound Effect): https://audiotrimmer.com/#google_vignette 

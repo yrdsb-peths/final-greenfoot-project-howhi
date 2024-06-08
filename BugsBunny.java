@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class BugsBunny extends Animal
 {
+    GreenfootSound bugsBunnyOuch = new GreenfootSound();
     GreenfootImage[] bugsBunnyAnimation = new GreenfootImage[3];
     
     SimpleTimer bugsBunnyTimer = new SimpleTimer();
