@@ -22,3 +22,6 @@ https://pixabay.com/sound-effects/search/cartoon%20boing/
 
 Bugs Bunny Sprites
 https://www.spriters-resource.com/snes/bugsbunnyrabbitrampage/sheet/44964/
+
+Bugs Bunny ouch sound effect
+https://www.nonstick.com/audio/soundsource/Bugs_Bunny/ltbb_170.mp3
