@@ -58,7 +58,7 @@ public class BugsBunny3 extends Animal
     public void animateBugsBunny3()
     {
         MyWorld gameWorld = (MyWorld) getWorld();
-        if(bugsBunnyTimer3.millisElapsed() < 100)
+        if(bugsBunnyTimer3.millisElapsed() < 300)
         {
             return;
         }
