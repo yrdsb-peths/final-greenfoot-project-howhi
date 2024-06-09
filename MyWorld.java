@@ -13,15 +13,17 @@ public class MyWorld extends World
     SimpleTimer currentTimeTimer = new SimpleTimer();
     
     public int moleDiceRoll;
-    public static int highScore = 0;
+    public int bugsBunnyDiceRoll;
     public int score;
-    public int time = 60;
+    public int time = 90;
+    public int level = 1;
     Label scoreLabel;
     Label currentScoreValue;
     Label currentTimeLabel;
     Label currentTimeValue;
     
     boolean aMoleIsAnimating = false;
+    boolean isTrue = true;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -42,13 +44,13 @@ public class MyWorld extends World
         currentTimeLabel = new Label("Time: ", 50);
         addObject(currentTimeLabel, getWidth() * 3 / 4, 40);
         
-        currentTimeValue = new Label(60, 50);
+        currentTimeValue = new Label(time, 50);
         addObject(currentTimeValue, 530, 40);
         
         diceRollTimer.mark();
         currentTimeTimer.mark();
         
-        timerDiceRoll = 2000;        
+        timerDiceRoll = Greenfoot.getRandomNumber(5000);        
         moleDiceRoll = 0;
         
         addHiddenMole2();
@@ -61,6 +63,12 @@ public class MyWorld extends World
     
     public void act()
     {
+        while(isTrue == true)
+        {
+            timerDiceRoll = Greenfoot.getRandomNumber(5000);
+            isTrue = false;
+        }
+        
         if(currentTimeTimer.millisElapsed() > 1000)
         {
             decreaseTime();
@@ -73,11 +81,11 @@ public class MyWorld extends World
             Greenfoot.setWorld(gameEndsWorld);
         }
         
-        if(diceRollTimer.millisElapsed() > timerDiceRoll)
+        if(aMoleIsAnimating == false && diceRollTimer.millisElapsed() > timerDiceRoll)
         {
             diceRollTimer.mark();
             aMoleIsAnimating = true;
-            moleDiceRoll = Greenfoot.getRandomNumber(6);
+            moleDiceRoll = Greenfoot.getRandomNumber(7);
             if(moleDiceRoll == 0)
             {
                 removeHiddenMole2();
@@ -108,25 +116,105 @@ public class MyWorld extends World
                 removeHiddenMole7();
                 generateMole7();
             }
+            else if(moleDiceRoll == 6)
+            {
+                bugsBunnyDiceRoll = Greenfoot.getRandomNumber(6);
+                if(bugsBunnyDiceRoll == 0)
+                {
+                    removeHiddenMole2();
+                    generateBugsBunny1();
+                }
+                else if(bugsBunnyDiceRoll == 1)
+                {
+                    removeHiddenMole3();
+                    generateBugsBunny2();
+                }
+                else if(bugsBunnyDiceRoll == 2)
+                {
+                    removeHiddenMole4();
+                    generateBugsBunny3();
+                }
+                else if(bugsBunnyDiceRoll == 3)
+                {
+                    removeHiddenMole5();
+                    generateBugsBunny4();
+                }
+                else if(bugsBunnyDiceRoll == 4)
+                {
+                    removeHiddenMole6();
+                    generateBugsBunny5();
+                }
+                else if(bugsBunnyDiceRoll == 5)
+                {
+                    removeHiddenMole7();
+                    generateBugsBunny6();
+                }
+            }
+            isTrue = true;
         }
     }
+    
+    public void generateBugsBunny1()
+    {
+        BugsBunny1 bugsBunny1 = new BugsBunny1();
+        addObject(bugsBunny1, getWidth() / 4, getHeight() / 3);
+    }
+    
+    public void generateBugsBunny2()
+    {
+        BugsBunny2 bugsBunny2 = new BugsBunny2();
+        addObject(bugsBunny2, getWidth() / 2, getHeight() / 3);
+    }
+    
+    public void generateBugsBunny3()
+    {
+        BugsBunny3 bugsBunny3 = new BugsBunny3();
+        addObject(bugsBunny3, getWidth() * 3 / 4, getHeight() / 3);
+    }
+    
+    public void generateBugsBunny4()
+    {
+        BugsBunny4 bugsBunny4 = new BugsBunny4();
+        addObject(bugsBunny4, getWidth() / 4, getHeight() * 2 / 3);
+    }
+    
+    public void generateBugsBunny5()
+    {
+        BugsBunny5 bugsBunny5 = new BugsBunny5();
+        addObject(bugsBunny5, getWidth() / 2, getHeight() * 2 / 3);
+    }
+    
+    public void generateBugsBunny6()
+    {
+        BugsBunny6 bugsBunny6 = new BugsBunny6();
+        addObject(bugsBunny6, getWidth() * 3 / 4, getHeight() * 2 / 3);
+    }
+    
+    GameEndsWorld gameEndsWorld = new GameEndsWorld();
     
     public void increaseScore()
     {
         score++;
-        GameEndsWorld gameEndsWorld = new GameEndsWorld();
+        
         gameEndsWorld.score++;
+        
+        if(gameEndsWorld.score > gameEndsWorld.highScore)
+        {
+            gameEndsWorld.highScore = gameEndsWorld.score;
+        }
         currentScoreValue.setValue(score);
         
-        if(score > highScore)
+        if(score > 0 && score % 5 == 0)
         {
-            highScore = score;
+            level++;
         }
     }
     
-    public int currentScore()
+    public void decreaseScoreBy5()
     {
-        return score;
+        score -= 5;
+        gameEndsWorld.score -= 5;
+        currentScoreValue.setValue(score);
     }
     
     public void decreaseTime()

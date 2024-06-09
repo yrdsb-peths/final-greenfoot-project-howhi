@@ -12,12 +12,15 @@ public class Mole4 extends Animal
      * Act - do whatever the Mole4 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    GreenfootSound mole4Clicked = new GreenfootSound("Dazed Mole Sound.mp3");
     
     GreenfootImage[] mole4Animation = new GreenfootImage[9];
     
     SimpleTimer animationMole4Timer = new SimpleTimer();
     
     SimpleTimer dazeMole4Timer = new SimpleTimer();
+    
+    public int hideMole4Time;
     
     boolean mole4IsAnimating = false;
     public Mole4()
@@ -29,24 +32,26 @@ public class Mole4 extends Animal
         }
         
         animationMole4Timer.mark();
-        
         setImage(mole4Animation[0]);
     }
     
     
     public void act()
     {    
+        MyWorld gameWorld = (MyWorld) getWorld();
+        hideMole4Time = 3000 - (gameWorld.level * 500);
         if(mole4IsAnimating)
         {
             dazeMole4();
         }
-        MyWorld gameWorld = (MyWorld) getWorld();
+        
         if(Greenfoot.mouseClicked(this) && this.getImage() == mole4Animation[0])
         {
+            mole4Clicked.play();
             mole4IsAnimating = true;
             gameWorld.increaseScore();
         }
-        else if(animationMole4Timer.millisElapsed() > 5000)
+        else if(animationMole4Timer.millisElapsed() > hideMole4Time)
         {
             gameWorld.removeObject(this);
             gameWorld.addHiddenMole4();
@@ -57,6 +62,7 @@ public class Mole4 extends Animal
     int imageIndex = 0;
     public void dazeMole4()
     {
+        MyWorld gameWorld = (MyWorld) getWorld();
         if(dazeMole4Timer.millisElapsed() < 100)
         {
             return;
@@ -69,10 +75,10 @@ public class Mole4 extends Animal
         {
             mole4IsAnimating = false;
             setImage(mole4Animation[8]);
-            MyWorld gameWorld = (MyWorld) getWorld();
             gameWorld.removeObject(this);
             gameWorld.addHiddenMole4();
             gameWorld.aMoleIsAnimating = false;
+            gameWorld.diceRollTimer.mark();
         }
     }
 }

@@ -13,11 +13,15 @@ public class Mole2 extends Animal
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
+    GreenfootSound mole2Clicked = new GreenfootSound("Dazed Mole Sound.mp3");
+    
     GreenfootImage[] mole2Animation = new GreenfootImage[9];
     
     SimpleTimer animationMole2Timer = new SimpleTimer();
     
     SimpleTimer dazeMole2Timer = new SimpleTimer();
+    
+    public int hideMole2Time;
     
     boolean mole2IsAnimating = false;
     public Mole2()
@@ -29,15 +33,13 @@ public class Mole2 extends Animal
         }
         
         animationMole2Timer.mark();
-        
-        setImage(mole2Animation[0]);
+        setImage(mole2Animation[0]);        
     }
-    
-        
     
     public void act()
     {    
         MyWorld gameWorld = (MyWorld) getWorld();
+        hideMole2Time = 3000 - (gameWorld.level * 500);
         if(mole2IsAnimating)
         {
             dazeMole2();
@@ -45,20 +47,22 @@ public class Mole2 extends Animal
         
         if(Greenfoot.mouseClicked(this) && this.getImage() == mole2Animation[0])
         {
+            mole2Clicked.play();
             gameWorld.increaseScore();
             mole2IsAnimating = true;
         }
-        else if(animationMole2Timer.millisElapsed() > 5000)
+        else if(animationMole2Timer.millisElapsed() > hideMole2Time)
         {
             gameWorld.removeObject(this);
             gameWorld.addHiddenMole2();
             gameWorld.aMoleIsAnimating = false;
-        }        
+        }
     }  
     
     int imageIndex = 0;
     public void dazeMole2()
     {
+        MyWorld gameWorld = (MyWorld) getWorld();
         if(dazeMole2Timer.millisElapsed() < 100)
         {
             return;
@@ -71,10 +75,11 @@ public class Mole2 extends Animal
         {
             mole2IsAnimating = false;
             setImage(mole2Animation[8]);
-            MyWorld gameWorld = (MyWorld) getWorld();
+            
             gameWorld.removeObject(this);
             gameWorld.addHiddenMole2();
             gameWorld.aMoleIsAnimating = false;
+            gameWorld.diceRollTimer.mark();
         }
     }
 }

@@ -13,11 +13,15 @@ public class Mole6 extends Animal
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
+    GreenfootSound mole6Clicked = new GreenfootSound("Dazed Mole Sound.mp3");
+    
     GreenfootImage[] mole6Animation = new GreenfootImage[9];
     
     SimpleTimer animationMole6Timer = new SimpleTimer();
     
     SimpleTimer dazeMole6Timer = new SimpleTimer();
+    
+    public int hideMole6Time;
     
     boolean mole6IsAnimating = false;
     public Mole6()
@@ -29,24 +33,26 @@ public class Mole6 extends Animal
         }
         
         animationMole6Timer.mark();
-        
         setImage(mole6Animation[0]);
     }
     
     
     public void act()
     {    
+        MyWorld gameWorld = (MyWorld) getWorld();
+        hideMole6Time = 3000 - (gameWorld.level * 500);
         if(mole6IsAnimating)
         {
             dazeMole6();
         }
-        MyWorld gameWorld = (MyWorld) getWorld();
+        
         if(Greenfoot.mouseClicked(this) && this.getImage() == mole6Animation[0])
         {
+            mole6Clicked.play();
             mole6IsAnimating = true;
             gameWorld.increaseScore();
         }
-        else if(animationMole6Timer.millisElapsed() > 5000)
+        else if(animationMole6Timer.millisElapsed() > hideMole6Time)
         {
             gameWorld.removeObject(this);
             gameWorld.addHiddenMole6();
@@ -57,6 +63,7 @@ public class Mole6 extends Animal
     int imageIndex = 0;
     public void dazeMole6()
     {
+        MyWorld gameWorld = (MyWorld) getWorld();
         if(dazeMole6Timer.millisElapsed() < 100)
         {
             return;
@@ -69,10 +76,10 @@ public class Mole6 extends Animal
         {
             mole6IsAnimating = false;
             setImage(mole6Animation[8]);
-            MyWorld gameWorld = (MyWorld) getWorld();
             gameWorld.removeObject(this);
             gameWorld.addHiddenMole6();
             gameWorld.aMoleIsAnimating = false;
+            gameWorld.diceRollTimer.mark();
         }
     }
 }

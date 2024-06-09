@@ -13,11 +13,15 @@ public class Mole7 extends Animal
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
+    GreenfootSound mole7Clicked = new GreenfootSound("Dazed Mole Sound.mp3");
+    
     GreenfootImage[] mole7Animation = new GreenfootImage[9];
     
     SimpleTimer animationMole7Timer = new SimpleTimer();
     
     SimpleTimer dazeMole7Timer = new SimpleTimer();
+    
+    public int hideMole7Time;
     
     boolean mole7IsAnimating = false;
     public Mole7()
@@ -29,34 +33,37 @@ public class Mole7 extends Animal
         }
         
         animationMole7Timer.mark();
-        
         setImage(mole7Animation[0]);
     }
     
     
     public void act()
     {    
+        MyWorld gameWorld = (MyWorld) getWorld();
+        hideMole7Time = 3000 - (gameWorld.level * 500);
         if(mole7IsAnimating)
         {
             dazeMole7();
         }
-        MyWorld gameWorld = (MyWorld) getWorld();
+        
         if(Greenfoot.mouseClicked(this) && this.getImage() == mole7Animation[0])
         {
+            mole7Clicked.play();
             mole7IsAnimating = true;
             gameWorld.increaseScore();
         }
-        else if(animationMole7Timer.millisElapsed() > 5000)
+        else if(animationMole7Timer.millisElapsed() > hideMole7Time)
         {
             gameWorld.removeObject(this);
             gameWorld.addHiddenMole7();
             gameWorld.aMoleIsAnimating = false;
-        }        
+        }       
     }
   
     int imageIndex = 0;
     public void dazeMole7()
     {
+        MyWorld gameWorld = (MyWorld) getWorld();
         if(dazeMole7Timer.millisElapsed() < 100)
         {
             return;
@@ -69,10 +76,10 @@ public class Mole7 extends Animal
         {
             mole7IsAnimating = false;
             setImage(mole7Animation[8]);
-            MyWorld gameWorld = (MyWorld) getWorld();
             gameWorld.removeObject(this);
             gameWorld.addHiddenMole7();
             gameWorld.aMoleIsAnimating = false;
+            gameWorld.diceRollTimer.mark();
         }
     }
 }
