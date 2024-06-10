@@ -43,7 +43,7 @@ public class BugsBunny5 extends Animal
         if(Greenfoot.mouseClicked(this))
         {
             bugsBunnyCutItOut5.play();
-            gameWorld.decreaseScoreBy5();
+            gameWorld.decreaseScoreBy3();
             bugsBunny5IsAnimating = true;
         }
         else if(bugsBunnyTimer5.millisElapsed() > 2000)

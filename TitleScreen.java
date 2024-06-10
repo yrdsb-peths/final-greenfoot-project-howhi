@@ -24,7 +24,7 @@ public class TitleScreen extends World
         super(600, 300, 1); 
         
         Mole1 mole1 = new Mole1();
-        addObject(mole1, getWidth() / 2, 245);
+        addObject(mole1, getWidth() / 2, 225);
         
         addObject(titleLabel, getWidth() / 2, 125);   
         
@@ -41,8 +41,14 @@ public class TitleScreen extends World
             return;
         }
         removeObject(titleLabel);
-        Label instructionsLabel = new Label("Click on as many\nmoles in 90 seconds!\nPress <Enter> to Start", 45);
-        addObject(instructionsLabel, getWidth() / 2, 100);
+        Label moleInstructionsLabel = new Label("Click on as many\nmoles in 90 seconds!", 35);
+        addObject(moleInstructionsLabel, getWidth() / 2, 50);
+        
+        Label bugsBunnyInstructionsLabel = new Label("Clicking on Bugs Bunny\ndecreases your score by 3!", 30);
+        addObject(bugsBunnyInstructionsLabel, getWidth() / 2, 130);
+        
+        Label startGameLabel = new Label("Press <enter> to start", 28);
+        addObject(startGameLabel, getWidth() / 2, 275);
         
         if(Greenfoot.isKeyDown("enter"))
         {

@@ -215,10 +215,10 @@ public class MyWorld extends World
         }
     }
     
-    public void decreaseScoreBy5()
+    public void decreaseScoreBy3()
     {
-        score -= 5;
-        gameEndsWorld.score -= 5;
+        score -= 3;
+        gameEndsWorld.score -= 3;
         currentScoreValue.setValue(score);
     }
     
