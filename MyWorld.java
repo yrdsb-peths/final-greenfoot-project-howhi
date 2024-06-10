@@ -15,8 +15,8 @@ public class MyWorld extends World
     public int moleDiceRoll;
     public int bugsBunnyDiceRoll;
     public int score;
-    public int time = 90;
-    public int level = 1;
+    public int time;
+    public int level;
     Label scoreLabel;
     Label currentScoreValue;
     Label currentTimeLabel;
@@ -38,7 +38,9 @@ public class MyWorld extends World
         scoreLabel = new Label("Score: ", 50);
         addObject(scoreLabel, getWidth() / 5, 40);
         
+        time = 90;
         score = 0;
+        level = 1;
         
         currentScoreValue = new Label(score, 50);
         addObject(currentScoreValue, 210, 40);
