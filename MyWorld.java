@@ -69,7 +69,7 @@ public class MyWorld extends World
     
     public void act()
     {
-        gameWorldBackgroundMusic.setVolume(20);;
+        gameWorldBackgroundMusic.setVolume(20);
         gameWorldBackgroundMusic.play();
         while(isTrue == true)
         {
