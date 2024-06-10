@@ -8,16 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class HiddenMole extends Animal
 {
-    GreenfootImage[] mole2Animation = new GreenfootImage[9];
+    GreenfootImage hiddenMoleImage = new GreenfootImage("images/mole_Hidden.png");
     
     public HiddenMole()
     {
-        for(int i = 0; i < mole2Animation.length; i++)
-        {
-            mole2Animation[i] = new GreenfootImage("images/Mole_Animate/mole_animate" + i + ".png");
-            mole2Animation[i].scale(100, 75);
-        }
-        
-        setImage(mole2Animation[8]);
+        hiddenMoleImage.scale(100, 75);
+
+        setImage(hiddenMoleImage);
     }
 }
