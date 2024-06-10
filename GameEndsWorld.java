@@ -51,6 +51,7 @@ public class GameEndsWorld extends World
         {
             score = 0;
             MyWorld gameWorld = new MyWorld();
+            titleScreenGameEndsMusic.stop();
             Greenfoot.setWorld(gameWorld);
         }
     }

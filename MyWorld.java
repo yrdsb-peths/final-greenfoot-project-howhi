@@ -166,15 +166,13 @@ public class MyWorld extends World
     
     public void increaseScore()
     {
-        score++;
-        
         gameEndsWorld.score++;
         
         if(gameEndsWorld.score > gameEndsWorld.highScore)
         {
             gameEndsWorld.highScore = gameEndsWorld.score;
         }
-        currentScoreValue.setValue(score);
+        currentScoreValue.setValue(gameEndsWorld.score);
         
         if(score > 0 && score % 5 == 0)
         {
@@ -186,7 +184,7 @@ public class MyWorld extends World
     {
         score -= 3;
         gameEndsWorld.score -= 3;
-        currentScoreValue.setValue(score);
+        currentScoreValue.setValue(gameEndsWorld.score);
     }
     
     public void decreaseTime()
