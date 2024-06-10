@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * One of the moles to hit/click on.
+ * A mole that is hiding in its burrow.
  * 
  * @author Ho 
  * @version May 2024
