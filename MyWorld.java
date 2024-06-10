@@ -25,6 +25,7 @@ public class MyWorld extends World
     boolean aMoleIsAnimating;
     boolean isTrue;
     
+    GameEndsWorld gameEndsWorld = new GameEndsWorld();
     GreenfootSound gameWorldBackgroundMusic = new GreenfootSound("Background Music GameWorld.mp3");
     /**
      * Constructor for objects of class MyWorld.
@@ -163,6 +164,37 @@ public class MyWorld extends World
         }
     }
     
+    public void increaseScore()
+    {
+        score++;
+        
+        gameEndsWorld.score++;
+        
+        if(gameEndsWorld.score > gameEndsWorld.highScore)
+        {
+            gameEndsWorld.highScore = gameEndsWorld.score;
+        }
+        currentScoreValue.setValue(score);
+        
+        if(score > 0 && score % 5 == 0)
+        {
+            level++;
+        }
+    }
+    
+    public void decreaseScoreBy3()
+    {
+        score -= 3;
+        gameEndsWorld.score -= 3;
+        currentScoreValue.setValue(score);
+    }
+    
+    public void decreaseTime()
+    {
+        time--;
+        currentTimeValue.setValue(time);
+    }
+    
     public void generateBugsBunny1()
     {
         BugsBunny1 bugsBunny1 = new BugsBunny1();
@@ -197,39 +229,6 @@ public class MyWorld extends World
     {
         BugsBunny6 bugsBunny6 = new BugsBunny6();
         addObject(bugsBunny6, getWidth() * 3 / 4, getHeight() * 2 / 3);
-    }
-    
-    GameEndsWorld gameEndsWorld = new GameEndsWorld();
-    
-    public void increaseScore()
-    {
-        score++;
-        
-        gameEndsWorld.score++;
-        
-        if(gameEndsWorld.score > gameEndsWorld.highScore)
-        {
-            gameEndsWorld.highScore = gameEndsWorld.score;
-        }
-        currentScoreValue.setValue(score);
-        
-        if(score > 0 && score % 5 == 0)
-        {
-            level++;
-        }
-    }
-    
-    public void decreaseScoreBy3()
-    {
-        score -= 3;
-        gameEndsWorld.score -= 3;
-        currentScoreValue.setValue(score);
-    }
-    
-    public void decreaseTime()
-    {
-        time--;
-        currentTimeValue.setValue(time);
     }
     
     public void generateMole2()
