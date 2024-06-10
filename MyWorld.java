@@ -14,7 +14,6 @@ public class MyWorld extends World
     
     public int moleDiceRoll;
     public int bugsBunnyDiceRoll;
-    public int score;
     public int time;
     public int level;
     Label scoreLabel;
@@ -40,12 +39,12 @@ public class MyWorld extends World
         addObject(scoreLabel, getWidth() / 5, 40);
         
         time = 90;
-        score = 0;
+        gameEndsWorld.score = 0;
         level = 1;
         
         aMoleIsAnimating = false;
         isTrue = true;
-        currentScoreValue = new Label(score, 50);
+        currentScoreValue = new Label(gameEndsWorld.score, 50);
         addObject(currentScoreValue, 210, 40);
         
         currentTimeLabel = new Label("Time: ", 50);
@@ -86,6 +85,10 @@ public class MyWorld extends World
         
         if(time < 0)
         {
+            if(gameEndsWorld.score > gameEndsWorld.highScore)
+            {
+                gameEndsWorld.highScore = gameEndsWorld.score;
+            }
             gameWorldBackgroundMusic.stop();
             GameEndsWorld gameEndsWorld = new GameEndsWorld();
             Greenfoot.setWorld(gameEndsWorld);
@@ -168,13 +171,9 @@ public class MyWorld extends World
     {
         gameEndsWorld.score++;
         
-        if(gameEndsWorld.score > gameEndsWorld.highScore)
-        {
-            gameEndsWorld.highScore = gameEndsWorld.score;
-        }
         currentScoreValue.setValue(gameEndsWorld.score);
         
-        if(score > 0 && score % 5 == 0)
+        if(gameEndsWorld.score > 0 && gameEndsWorld.score % 5 == 0)
         {
             level++;
         }
@@ -182,7 +181,6 @@ public class MyWorld extends World
     
     public void decreaseScoreBy3()
     {
-        score -= 3;
         gameEndsWorld.score -= 3;
         currentScoreValue.setValue(gameEndsWorld.score);
     }
