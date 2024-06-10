@@ -22,8 +22,8 @@ public class MyWorld extends World
     Label currentTimeLabel;
     Label currentTimeValue;
     
-    boolean aMoleIsAnimating = false;
-    boolean isTrue = true;
+    boolean aMoleIsAnimating;
+    boolean isTrue;
     
     GreenfootSound gameWorldBackgroundMusic = new GreenfootSound("Background Music GameWorld.mp3");
     /**
@@ -42,6 +42,8 @@ public class MyWorld extends World
         score = 0;
         level = 1;
         
+        aMoleIsAnimating = false;
+        isTrue = true;
         currentScoreValue = new Label(score, 50);
         addObject(currentScoreValue, 210, 40);
         

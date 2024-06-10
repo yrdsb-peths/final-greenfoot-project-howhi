@@ -11,13 +11,11 @@ public class TitleScreen extends World
     SimpleTimer instructionsTimer = new SimpleTimer();
     
     GreenfootSound titleScreenGameEndsMusic = new GreenfootSound("Background Music TitleScreen & GameEndsWorld.mp3");
-    
+    Label titleLabel = new Label("Connor's\nWhac-a-Mole!", 75);
     /**
      * Constructor for objects of class TitleScreen.
      * 
-     */
-    Label titleLabel = new Label("Connor's\nWhac-a-Mole!", 75);
-
+     */  
     public TitleScreen()
     {    
         // Create a new world with 600x300 cells with a cell size of 1x1 pixels.
