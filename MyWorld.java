@@ -24,6 +24,8 @@ public class MyWorld extends World
     
     boolean aMoleIsAnimating = false;
     boolean isTrue = true;
+    
+    GreenfootSound gameWorldBackgroundMusic = new GreenfootSound("Background Music GameWorld.mp3");
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -63,6 +65,8 @@ public class MyWorld extends World
     
     public void act()
     {
+        gameWorldBackgroundMusic.setVolume(20);;
+        gameWorldBackgroundMusic.play();
         while(isTrue == true)
         {
             timerDiceRoll = Greenfoot.getRandomNumber(5000);
@@ -77,6 +81,7 @@ public class MyWorld extends World
         
         if(time < 0)
         {
+            gameWorldBackgroundMusic.stop();
             GameEndsWorld gameEndsWorld = new GameEndsWorld();
             Greenfoot.setWorld(gameEndsWorld);
         }

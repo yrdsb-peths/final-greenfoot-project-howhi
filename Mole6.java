@@ -48,6 +48,7 @@ public class Mole6 extends Animal
         
         if(Greenfoot.mouseClicked(this) && this.getImage() == mole6Animation[0])
         {
+            mole6Clicked.setVolume(100);
             mole6Clicked.play();
             mole6IsAnimating = true;
             gameWorld.increaseScore();

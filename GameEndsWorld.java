@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GameEndsWorld extends World
 {
+    GreenfootSound titleScreenGameEndsMusic = new GreenfootSound("Background Music TitleScreen & GameEndsWorld.mp3");
+
     public static int score;
     public static int highScore;
     /**
@@ -43,6 +45,8 @@ public class GameEndsWorld extends World
     
     public void act()
     {
+        titleScreenGameEndsMusic.setVolume(50);
+        titleScreenGameEndsMusic.play();
         if(Greenfoot.isKeyDown("enter"))
         {
             score = 0;

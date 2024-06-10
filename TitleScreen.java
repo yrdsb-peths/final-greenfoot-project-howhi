@@ -10,6 +10,8 @@ public class TitleScreen extends World
 {
     SimpleTimer instructionsTimer = new SimpleTimer();
     
+    GreenfootSound titleScreenGameEndsMusic = new GreenfootSound("Background Music TitleScreen & GameEndsWorld.mp3");
+    
     /**
      * Constructor for objects of class TitleScreen.
      * 
@@ -32,6 +34,8 @@ public class TitleScreen extends World
     
     public void act()
     {        
+        titleScreenGameEndsMusic.setVolume(50);
+        titleScreenGameEndsMusic.play();
         if(instructionsTimer.millisElapsed() < 2000)
         {
             return;
@@ -42,6 +46,7 @@ public class TitleScreen extends World
         
         if(Greenfoot.isKeyDown("enter"))
         {
+            titleScreenGameEndsMusic.stop();
             MyWorld gameWorld = new MyWorld();
             Greenfoot.setWorld(gameWorld);
         }
