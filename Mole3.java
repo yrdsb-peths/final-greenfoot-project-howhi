@@ -22,7 +22,7 @@ public class Mole3 extends Animal
     
     public int hideMole3Time;
     
-    boolean mole3IsAnimating = false;
+    boolean mole3IsAnimating;
     public Mole3()
     {
         for(int i = 0; i < mole3Animation.length; i++)
@@ -30,6 +30,7 @@ public class Mole3 extends Animal
             mole3Animation[i] = new GreenfootImage("images/Mole_Animate/mole_animate" + i + ".png");
             mole3Animation[i].scale(100, 75);
         }
+        mole3IsAnimating = false;
         
         animationMole3Timer.mark();
         setImage(mole3Animation[0]);

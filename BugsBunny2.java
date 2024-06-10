@@ -13,7 +13,7 @@ public class BugsBunny2 extends Animal
     
     
     SimpleTimer bugsBunnyTimer2 = new SimpleTimer();
-    boolean bugsBunny2IsAnimating = false;
+    boolean bugsBunny2IsAnimating;
     public BugsBunny2()
     {
         for(int i = 0; i < bugsBunny2Animation.length; i++)
@@ -21,6 +21,7 @@ public class BugsBunny2 extends Animal
             bugsBunny2Animation[i] = new GreenfootImage("images/Bugs_Bunny_Animate/bugs_bunny_hammered" + i + ".png");
             bugsBunny2Animation[i].scale(100, 100);
         }
+        bugsBunny2IsAnimating = false;
         
         GreenfootImage bugsBunnyStanding2 = new GreenfootImage("images/Bugs_Bunny_Standing.png");
         bugsBunnyStanding2.scale(100, 100);

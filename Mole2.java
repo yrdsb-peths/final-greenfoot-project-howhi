@@ -23,7 +23,7 @@ public class Mole2 extends Animal
     
     public int hideMole2Time;
     
-    boolean mole2IsAnimating = false;
+    boolean mole2IsAnimating;
     public Mole2()
     {
         for(int i = 0; i < mole2Animation.length; i++)
@@ -31,6 +31,7 @@ public class Mole2 extends Animal
             mole2Animation[i] = new GreenfootImage("images/Mole_Animate/mole_animate" + i + ".png");
             mole2Animation[i].scale(100, 75);
         }
+        mole2IsAnimating = false;
         
         animationMole2Timer.mark();
         setImage(mole2Animation[0]);        
