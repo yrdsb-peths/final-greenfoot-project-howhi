@@ -15,14 +15,14 @@ Consider using **Markdown** syntax to format the text in this file. [Markdown ba
 
 
 
-<ins>## Citations/Credits for Sounds/Images/Websites Used<ins>
+<ins><h2>Citations/Credits for Sounds/Images/Websites Used<h2><ins>
 
 
 
 [Mole animation sprites] (https://www.behance.net/gallery/62880791/Whack-A-Mole-Game)
 
 
-[itleScreen Background] (https://www.istockphoto.com/photos/cartoon-grass) 
+[TitleScreen and GameEndsWorld Background] (https://www.istockphoto.com/photos/cartoon-grass) 
 
 
 [Sprite sheet cutter (for both moles and bugs bunny
