@@ -15,7 +15,7 @@ Consider using **Markdown** syntax to format the text in this file. [Markdown ba
 
 
 
-<h2>Citations/Credits for Sounds/Images/Websites Used<h2>
+<h2><ins>Citations/Credits for Sounds/Images/Websites Used<ins><h2>
 
 
 
@@ -37,7 +37,7 @@ Consider using **Markdown** syntax to format the text in this file. [Markdown ba
 
 
 [Bugs Bunny Sprites]
-https://www.spriters-(resource.com/snes/bugsbunnyrabbitrampage/sheet/44964/)
+(https://www.spriters-resource.com/snes/bugsbunnyrabbitrampage/sheet/44964/
 
 [Bugs Bunny Cut It Out Sound Effect]
 (https://www.nonstick.com/audio/soundsource/Bugs_Bunny/ltbb_046.mp3) 
