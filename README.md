@@ -15,7 +15,7 @@ Consider using **Markdown** syntax to format the text in this file. [Markdown ba
 
 
 
-<ins><h2>Citations/Credits for Sounds/Images/Websites Used<h2><ins>
+<h2><ins>Citations/Credits for Sounds/Images/Websites Used<ins><h2>
 
 
 
