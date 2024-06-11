@@ -105,22 +105,46 @@ public class Mole7 extends Animal
     int imageIndex = 0;
     public void dazeMole7()
     {
+        // Getting the GameWorld world
         MyWorld gameWorld = (MyWorld) getWorld();
+        
+        // If the mole timer is less than 100 milliseconds, then return
+        // out of this loop.
         if(dazeMole7Timer.millisElapsed() < 100)
         {
             return;
         }
+        
+        // Set the image of the mole to the image index of the array of images
         setImage(mole7Animation[imageIndex]);
+        
+        // Increase the image index by 1.
         imageIndex = (imageIndex + 1) % mole7Animation.length;
+        
+        // Mark the mole timer.
         dazeMole7Timer.mark();
         
+        // If the mole reaches the last image in the array.
         if(imageIndex == 8)
         {
+            // Set this boolean to false to stop this mole from animating again
+            // so it only animates once.
             mole7IsAnimating = false;
+            
+            // Set the image of this class to the last image of the array.
             setImage(mole7Animation[8]);
+            
+            // Remove this object.
             gameWorld.removeObject(this);
+            
+            // Add the hiddenMole in place of where this mole was.
             gameWorld.addHiddenMole7();
+            
+            // Set aMoleIsAnimating in the gameWorld MyWorld class to false
+            // to indicate no mole or bunny is currently animating.
             gameWorld.aMoleIsAnimating = false;
+            
+            // Mark the diceRollTimer in the MyWorld class.
             gameWorld.diceRollTimer.mark();
         }
     }

@@ -119,7 +119,7 @@ public class BugsBunny6 extends Animal
         // If the bugs bunny reaches the last image in the array.
         if(imageIndex == 2)
         {
-            // Set this boolean to false to stop this bunny from animating
+            // Set this boolean to false to stop this bunny from animating again
             // so it only animates once.
             bugsBunny6IsAnimating = false;
             
