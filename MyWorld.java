@@ -47,16 +47,19 @@ public class MyWorld extends World
     Label currentTimeValue;
     
     
-    // This is the boolean that returns whether or not a mole or bugs bunny is animating.
+    // This is the boolean that returns whether or not a mole or bugs bunny
+    // is animating.
     boolean aMoleIsAnimating;
     
-    // This is the boolean that helps get a random number for timerDiceRoll in the act() method.
+    // This is the boolean that helps get a random number for timerDiceRoll
+    // in the act() method.
     boolean isTrue;
     
     // This initialized a new gameEndsWorld.
     GameEndsWorld gameEndsWorld = new GameEndsWorld();
     
-    // This is the music that is to be played throughout gameplay.
+    // Created a GreenfootSound for the background music that is to be played
+    // throughout gameplay.
     GreenfootSound gameWorldBackgroundMusic = new GreenfootSound("Background Music GameWorld.mp3");
     /**
      * The constructor for MyWorld(). A world is created, the time value, score,

@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GameEndsWorld extends World
 {
+    // Created GreenfootSound for the background music for the GameEndsWorld
+    // (same as the TitleScreen).
     GreenfootSound titleScreenGameEndsMusic = new GreenfootSound("Background Music TitleScreen & GameEndsWorld.mp3");
 
     public static int score;

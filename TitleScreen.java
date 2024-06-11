@@ -11,7 +11,8 @@ public class TitleScreen extends World
     // Creating a timer to show instructions for the game.
     SimpleTimer instructionsTimer = new SimpleTimer();
     
-    // The background music to be played on the titleScreen and GameEndsWorld.
+    // Created a Greenfoot Sound for the background music to be played on the
+    // titleScreen and GameEndsWorld.
     GreenfootSound titleScreenGameEndsMusic = new GreenfootSound("Background Music TitleScreen & GameEndsWorld.mp3");
     
     // The first title to be shown when running the game.
