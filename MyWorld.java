@@ -66,7 +66,6 @@ public class MyWorld extends World
      * level, and booleans are initialzied. Labels are added. Timers are marked. 
      * timerDiceRoll is initialized, and the hiddenMoles are added to the world
      * to start.
-     * 
      */
     public MyWorld()
     {    
