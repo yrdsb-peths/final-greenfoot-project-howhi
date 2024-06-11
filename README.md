@@ -15,14 +15,14 @@ Consider using **Markdown** syntax to format the text in this file. [Markdown ba
 
 
 
-<h2><ins>Citations/Credits for Sounds/Images/Websites Used<ins><h2>
+<h2>Citations/Credits for Sounds/Images/Websites Used<h2>
 
 
 
 [Mole animation sprites] (https://www.behance.net/gallery/62880791/Whack-A-Mole-Game)
 
 
-<h5>[TitleScreen and GameEndsWorld Background] (https://www.istockphoto.com/photos/cartoon-grass) 
+[TitleScreen and GameEndsWorld Background] (https://www.istockphoto.com/photos/cartoon-grass) 
 
 
 [Sprite sheet cutter (for both moles and bugs bunny
@@ -49,4 +49,4 @@ https://www.spriters-(resource.com/snes/bugsbunnyrabbitrampage/sheet/44964/)
 [TitleScreen & GameEndsWorld Background Music] (https://pixabay.com/music/search/video%20game%20music/)
 
 [GameWorld Background Music]
-(https://pixabay.com/music/search/video%20game%20music/?pagi=2) <h5>
+(https://pixabay.com/music/search/video%20game%20music/?pagi=2)
