@@ -263,7 +263,7 @@ public class MyWorld extends World
         // Set the currentScoreValue to the updated score.
         currentScoreValue.setValue(gameEndsWorld.score);
         
-        // Increase the level by 1 if the score is a multiple of 5 and is not 0.
+        // Increase the level by 1 if the score is a multiple of 5 and is greater than 0.
         if(gameEndsWorld.score > 0 && gameEndsWorld.score % 5 == 0)
         {
             level++;
