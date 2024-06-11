@@ -33,7 +33,7 @@ public class BugsBunny4 extends Animal
      */
     public BugsBunny4()
     {
-        // Looping through the array of images.
+        // Looping through the array of images and scaling images.
         for(int i = 0; i < bugsBunny4Animation.length; i++)
         {
             bugsBunny4Animation[i] = new GreenfootImage("images/Bugs_Bunny_Animate/bugs_bunny_hammered" + i + ".png");

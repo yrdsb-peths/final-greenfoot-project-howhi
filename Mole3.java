@@ -39,6 +39,7 @@ public class Mole3 extends Animal
      */
     public Mole3()
     {
+        // Looping through the array of images and scaling images.
         for(int i = 0; i < mole3Animation.length; i++)
         {
             mole3Animation[i] = new GreenfootImage("images/Mole_Animate/mole_animate" + i + ".png");

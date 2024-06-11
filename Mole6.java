@@ -39,6 +39,7 @@ public class Mole6 extends Animal
      */
     public Mole6()
     {
+        // Looping through the array of images and scaling images.
         for(int i = 0; i < mole6Animation.length; i++)
         {
             mole6Animation[i] = new GreenfootImage("images/Mole_Animate/mole_animate" + i + ".png");
