@@ -45,6 +45,8 @@ public class Mole4 extends Animal
             mole4Animation[i] = new GreenfootImage("images/Mole_Animate/mole_animate" + i + ".png");
             mole4Animation[i].scale(100, 75);
         }
+        
+        // Set mole4IsAnimating equal to false.
         mole4IsAnimating = false;
         
         animationMole4Timer.mark();
