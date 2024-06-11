@@ -19,14 +19,14 @@ Consider using **Markdown** syntax to format the text in this file. [Markdown ba
 
 
 
-[Mole animation sprites] (https://www.behance.net/gallery/62880791/Whack-A-Mole-Game)
+[Mole animation sprites] (https://www.behance.net/gallery/62880791/Whack-A-Mole-Game).
 
 
 [TitleScreen and GameEndsWorld Background] (https://www.istockphoto.com/photos/cartoon-grass). 
 
 
 [Sprite sheet cutter (for both moles and bugs bunny
-)] (https://ezgif.com/)
+)] (https://ezgif.com/).
 
 
 [MyWorld Background] (https://www.pinterest.com/pin/358317714080617664/).
