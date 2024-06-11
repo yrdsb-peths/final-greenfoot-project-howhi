@@ -46,10 +46,13 @@ public class Mole7 extends Animal
             mole7Animation[i].scale(100, 75);
         }
         
-        // Set mole2IsAnimating equal to false.
+        // Set mole7IsAnimating equal to false.
         mole7IsAnimating = false;
         
+        // Mark the animationMole7Timer
         animationMole7Timer.mark();
+        
+        // Set the current class image to the first image in the array.
         setImage(mole7Animation[0]);
     }
     

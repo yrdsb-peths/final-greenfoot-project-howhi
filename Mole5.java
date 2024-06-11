@@ -49,7 +49,10 @@ public class Mole5 extends Animal
         // Set mole5IsAnimating equal to false.
         mole5IsAnimating = false;
         
+        // Mark the animationMole5Timer
         animationMole5Timer.mark();
+        
+        // Set the current class image to the first image in the array.
         setImage(mole5Animation[0]);
     }
     
