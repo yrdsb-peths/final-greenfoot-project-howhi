@@ -14,7 +14,7 @@ public class Mole7 extends Animal
      * and create a boolean indicating whether or not the mole is animating.
      */
     
-    // Creating a sound for when the mole is clicked. A "boing" sound".
+    // Creating a sound for when the mole is clicked. A "boing" sound.
     GreenfootSound mole7Clicked = new GreenfootSound("Dazed Mole Sound.mp3");
     
     // The array of images for the mole to animate.
@@ -59,26 +59,47 @@ public class Mole7 extends Animal
     
     public void act()
     {    
+        // Getting the GameWorld world
         MyWorld gameWorld = (MyWorld) getWorld();
+        
+        // Setting the time the mole takes to hide to be the current level
+        // multiplied by 500 milliseconds (half a second), and then to subtract
+        // the difference from 3000 milliseconds (3 seconds).
         hideMole7Time = 3000 - (gameWorld.level * 500);
+        
+        // If the mole is supposed to be animating (as per the boolean) then
+        // daze the mole.
         if(mole7IsAnimating)
         {
             dazeMole7();
         }
         
+        // If the mole is clicked and the mole's image is the first one in the array.        
         if(Greenfoot.mouseClicked(this) && this.getImage() == mole7Animation[0])
         {
+            // Play the mole sound "boing".
             mole7Clicked.setVolume(100);
             mole7Clicked.play();
-            mole7IsAnimating = true;
+            
+            // Increase the score by 1.
             gameWorld.increaseScore();
+            
+            // Set the boolean indicating if the mole is animating or not to be true.
+            mole7IsAnimating = true;
         }
+        // Else if the user took too long to click on the mole (longer than hideMole7Time).
         else if(animationMole7Timer.millisElapsed() > hideMole7Time)
         {
+            // Remove this object.
             gameWorld.removeObject(this);
+        
+            // Add back the hiddenMole that this mole replaced.
             gameWorld.addHiddenMole7();
+            
+            // Set aMoleIsAnimating in the gameWorld to be false to let the next
+            // dice roll happen.
             gameWorld.aMoleIsAnimating = false;
-        }       
+        } 
     }
   
     int imageIndex = 0;

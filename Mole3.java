@@ -14,7 +14,7 @@ public class Mole3 extends Animal
      * and create a boolean indicating whether or not the mole is animating.
      */
     
-    // Creating a sound for when the mole is clicked. A "boing" sound".
+    // Creating a sound for when the mole is clicked. A "boing" sound.
     GreenfootSound mole3Clicked = new GreenfootSound("Dazed Mole Sound.mp3");
     
     // The array of images for the mole to animate.
@@ -59,24 +59,45 @@ public class Mole3 extends Animal
     
     public void act()
     {  
+        // Getting the GameWorld world
         MyWorld gameWorld = (MyWorld) getWorld();
+        
+        // Setting the time the mole takes to hide to be the current level
+        // multiplied by 500 milliseconds (half a second), and then to subtract
+        // the difference from 3000 milliseconds (3 seconds).
         hideMole3Time = 3000 - (gameWorld.level * 500);
+        
+        // If the mole is supposed to be animating (as per the boolean) then
+        // daze the mole.
         if(mole3IsAnimating)
         {
             dazeMole3();
         }
         
+        // If the mole is clicked and the mole's image is the first one in the array.        
         if(Greenfoot.mouseClicked(this) && this.getImage() == mole3Animation[0])
         {
+            // Play the mole sound "boing".
             mole3Clicked.setVolume(100);
             mole3Clicked.play();
-            mole3IsAnimating = true;
+            
+            // Increase the score by 1.
             gameWorld.increaseScore();
+            
+            // Set the boolean indicating if the mole is animating or not to be true.
+            mole3IsAnimating = true;
         }
+        // Else if the user took too long to click on the mole (longer than hideMole3Time).
         else if(animationMole3Timer.millisElapsed() > hideMole3Time)
         {
+            // Remove this object.
             gameWorld.removeObject(this);
+        
+            // Add back the hiddenMole that this mole replaced.
             gameWorld.addHiddenMole3();
+            
+            // Set aMoleIsAnimating in the gameWorld to be false to let the next
+            // dice roll happen.
             gameWorld.aMoleIsAnimating = false;
         }
     }
