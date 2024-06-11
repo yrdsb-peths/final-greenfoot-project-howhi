@@ -9,21 +9,34 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Mole5 extends Animal
 {
     /**
-     * Act - do whatever the Mole5 wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Creating a sound and image array for the mole, create two SimpleTimers,
+     * create an int to store the amount of time a mole has to stay popped up,
+     * and create a boolean indicating whether or not the mole is animating.
      */
     
+    // Creating a sound for when the mole is clicked. A "boing" sound".
     GreenfootSound mole5Clicked = new GreenfootSound("Dazed Mole Sound.mp3");
     
+    // The array of images for the mole to animate.
     GreenfootImage[] mole5Animation = new GreenfootImage[9];
     
+    // Creating a timer for how long a mole has to stay popped up.
     SimpleTimer animationMole5Timer = new SimpleTimer();
     
+    // Creating a timer for the animation part.
     SimpleTimer dazeMole5Timer = new SimpleTimer();
     
+    // This is the int that stores how long a mole will appear for.
     public int hideMole5Time;
     
+    // This is the boolean that indicates whether or not the mole is animating.
     boolean mole5IsAnimating;
+    
+    /**
+     * The constructor for Mole5. The array of images are looped
+     * through, moleIsAnimating is initialized, timer is marked, and the
+     * image of the class is set.
+     */
     public Mole5()
     {
         for(int i = 0; i < mole5Animation.length; i++)

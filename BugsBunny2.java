@@ -13,7 +13,7 @@ public class BugsBunny2 extends Animal
      * and create a boolean to indicate whether or not the bugsBunny is animating.
      */
     
-    // Creating a sound to for when bugs bunny is clicked: he will cry out 
+    // Creating a sound for when bugs bunny is clicked: he will cry out 
     // "Cut It Out!"
     GreenfootSound bugsBunnyCutItOut2 = new GreenfootSound("Bugs Bunny Cut It Out.mp3");
     
