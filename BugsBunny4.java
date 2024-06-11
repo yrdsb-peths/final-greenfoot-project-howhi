@@ -23,9 +23,11 @@ public class BugsBunny4 extends Animal
         }
         bugsBunny4IsAnimating = false;
         
+        bugsBunnyTimer4.mark(); 
+        
         GreenfootImage bugsBunnyStanding4 = new GreenfootImage("images/Bugs_Bunny_Standing.png");
         bugsBunnyStanding4.scale(100, 100);
-        bugsBunnyTimer4.mark();        
+               
         setImage(bugsBunnyStanding4);
     }
     
