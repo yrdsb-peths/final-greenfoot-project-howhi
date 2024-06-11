@@ -22,7 +22,7 @@ Consider using **Markdown** syntax to format the text in this file. [Markdown ba
 [Mole animation sprites] (https://www.behance.net/gallery/62880791/Whack-A-Mole-Game)
 
 
-[TitleScreen and GameEndsWorld Background] (https://www.istockphoto.com/photos/cartoon-grass) 
+<h5>[TitleScreen and GameEndsWorld Background] (https://www.istockphoto.com/photos/cartoon-grass) 
 
 
 [Sprite sheet cutter (for both moles and bugs bunny
@@ -49,4 +49,4 @@ https://www.spriters-(resource.com/snes/bugsbunnyrabbitrampage/sheet/44964/)
 [TitleScreen & GameEndsWorld Background Music] (https://pixabay.com/music/search/video%20game%20music/)
 
 [GameWorld Background Music]
-(https://pixabay.com/music/search/video%20game%20music/?pagi=2) 
+(https://pixabay.com/music/search/video%20game%20music/?pagi=2) <h5>
