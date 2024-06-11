@@ -8,32 +8,43 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class TitleScreen extends World
 {
+    // Creating a timer to show instructions for the game.
     SimpleTimer instructionsTimer = new SimpleTimer();
     
+    // The background music to be played on the titleScreen and GameEndsWorld.
     GreenfootSound titleScreenGameEndsMusic = new GreenfootSound("Background Music TitleScreen & GameEndsWorld.mp3");
+    
+    // The first title to be shown when running the game.
     Label titleLabel = new Label("Connor's\nWhac-a-Mole!", 75);
     /**
-     * Constructor for objects of class TitleScreen.
-     * 
+     * The constructor for the TitleScreen World. Create 
+     * the world, create an animated mole, create the title "titleLabel".
+     * Mark the instructionsTimer.
      */  
     public TitleScreen()
     {    
         // Create a new world with 600x300 cells with a cell size of 1x1 pixels.
         super(600, 300, 1); 
         
+        // Creating an animated mole on the titleScreen.
         Mole1 mole1 = new Mole1();
         addObject(mole1, getWidth() / 2, 225);
         
+        // Adding titleLabel to TitleScreen world.
         addObject(titleLabel, getWidth() / 2, 125);   
         
+        // Marking instructionsTimer.
         instructionsTimer.mark();
     }
     
     
     public void act()
     {        
+        // Play the background music all the time while in this world.
         titleScreenGameEndsMusic.setVolume(50);
         titleScreenGameEndsMusic.play();
+    
+        // After two seconds, remove titleLabel and add instructions.
         if(instructionsTimer.millisElapsed() < 2000)
         {
             return;
@@ -48,6 +59,8 @@ public class TitleScreen extends World
         Label startGameLabel = new Label("Press <enter> to start", 28);
         addObject(startGameLabel, getWidth() / 2, 275);
         
+        
+        // If user presses <enter> then game starts. Stop background music. Switch world to MyWorld.
         if(Greenfoot.isKeyDown("enter"))
         {
             titleScreenGameEndsMusic.stop();
