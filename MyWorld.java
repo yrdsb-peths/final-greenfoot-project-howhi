@@ -35,15 +35,15 @@ public class MyWorld extends World
         // Create a new world with 600x300 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
         
-        scoreLabel = new Label("Score: ", 50);
-        addObject(scoreLabel, getWidth() / 5, 40);
-        
         time = 90;
         gameEndsWorld.score = 0;
         level = 1;
         
         aMoleIsAnimating = false;
         isTrue = true;
+        
+        scoreLabel = new Label("Score: ", 50);
+        addObject(scoreLabel, getWidth() / 5, 40);
         currentScoreValue = new Label(gameEndsWorld.score, 50);
         addObject(currentScoreValue, 210, 40);
         

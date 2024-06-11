@@ -10,8 +10,7 @@ public class BugsBunny1 extends Animal
 {
     GreenfootSound bugsBunnyCutItOut1 = new GreenfootSound("Bugs Bunny Cut It Out.mp3");
     GreenfootImage[] bugsBunny1Animation = new GreenfootImage[3];
-    
-    
+
     SimpleTimer bugsBunnyTimer1 = new SimpleTimer();
     boolean bugsBunny1IsAnimating;
     public BugsBunny1()
