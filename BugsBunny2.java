@@ -40,7 +40,7 @@ public class BugsBunny2 extends Animal
             bugsBunny2Animation[i].scale(100, 100);
         }
         
-        // Set bugsBunny1IsAnimating equal to false.
+        // Set bugsBunny2IsAnimating equal to false.
         bugsBunny2IsAnimating = false;
         
         // Mark the bugsBunnyTimer.
