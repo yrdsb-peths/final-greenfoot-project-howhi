@@ -102,14 +102,19 @@ public class Mole5 extends Animal
         }
     }
     
+    // The image index of the array is initialized.
     int imageIndex = 0;
+    /**
+     * This method animates the mole so that the mole looks "dazed"
+     * after being clicked on to resemble it being "whacked."
+     */
     public void dazeMole5()
     {
         // Getting the GameWorld world
         MyWorld gameWorld = (MyWorld) getWorld();
         
         // If the mole timer is less than 100 milliseconds, then return
-        // out of this loop.
+        // out of this method.
         if(dazeMole5Timer.millisElapsed() < 100)
         {
             return;
