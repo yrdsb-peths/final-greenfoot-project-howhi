@@ -54,6 +54,6 @@ One quick final note: a constantly animating mole will also be showing on the Ti
 
 [Bugs Bunny Default Image (Standing)](https://en.wikipedia.org/wiki/Bugs_Bunny)
 
-[TitleScreen & GameEndsWorld Background Music](https://pixabay.com/music/video-games-8-bit-background-music-for-arcade-game-come-on-mario-164702/
+[TitleScreen & GameEndsWorld Background Music](https://pixabay.com/music/video-games-8-bit-background-music-for-arcade-game-come-on-mario-164702/)
 
 [GameWorld Background Music](https://pixabay.com/music/video-games-game-music-7408/)
