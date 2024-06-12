@@ -20,7 +20,7 @@ public class Mole6 extends Animal
     // The array of images for the mole to animate.
     GreenfootImage[] mole6Animation = new GreenfootImage[9];
     
-    // Creating a timer for how long a mole has to stay popped up.
+    // Creating a timer to time how long the mole has been showing.
     SimpleTimer animationMole6Timer = new SimpleTimer();
     
     // Creating a timer for the animation part.
@@ -34,7 +34,7 @@ public class Mole6 extends Animal
     
     /**
      * The constructor for Mole6. The array of images are looped
-     * through, moleIsAnimating is initialized, timer is marked, and the
+     * through, mole6IsAnimating is initialized, timer is marked, and the
      * image of the class is set.
      */
     public Mole6()
@@ -136,7 +136,7 @@ public class Mole6 extends Animal
             // so it only animates once.
             mole6IsAnimating = false;
             
-            // Set the image of this class to the last image of the array.
+            // Set the image of the mole to the image index of the array of images
             setImage(mole6Animation[8]);
             
             // Remove this object.
