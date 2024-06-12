@@ -6,7 +6,6 @@ Consider using **Markdown** syntax to format the text in this file. [Markdown ba
 
 
 
-
 <h1><ins>Time to Play Connor’s Whac-A-Mole!<ins></h1>
 
 Have you ever heard of the game *Whac-A-Mole*? Whether you have or haven’t, this is a great place for you to either start or improve your skills! 
@@ -46,7 +45,7 @@ One quick final note: a constantly animating mole will also be showing on the Ti
 [MyWorld Background](https://www.pinterest.com/pin/358317714080617664/)
 
 
-[“Boing” sound effect when clicking mole](https://pixabay.com/sound-effects/search/cartoon%20boing/)
+[“Boing” sound effect when clicking mole](https://pixabay.com/sound-effects/boing-spring-mouth-harp-04-20-13-4-103346/)
 
 
 [Bugs Bunny Sprites](https://www.spriters-resource.com/snes/bugsbunnyrabbitrampage/sheet/44964/)
@@ -56,6 +55,6 @@ One quick final note: a constantly animating mole will also be showing on the Ti
 
 [Bugs Bunny Default Image (Standing)](https://en.wikipedia.org/wiki/Bugs_Bunny)
 
-[TitleScreen & GameEndsWorld Background Music](https://pixabay.com/music/search/video%20game%20music/)
+[TitleScreen & GameEndsWorld Background Music]( https://pixabay.com/music/video-games-8-bit-background-music-for-arcade-game-come-on-mario-164702/
 
-[GameWorld Background Music](https://pixabay.com/music/search/video%20game%20music/?pagi=2)
+[GameWorld Background Music](https://pixabay.com/music/video-games-game-music-7408/)
