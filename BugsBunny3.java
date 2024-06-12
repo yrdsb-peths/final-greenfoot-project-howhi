@@ -17,7 +17,7 @@ public class BugsBunny3 extends Animal
     // "Cut It Out!"
     GreenfootSound bugsBunnyCutItOut3 = new GreenfootSound("Bugs Bunny Cut It Out.mp3");
 
-    // The array of images for the bugs bunny to animate.
+    // The array of images for the bugs bunny to animate through.
     GreenfootImage[] bugsBunny3Animation = new GreenfootImage[3];
     
     // Creating a timer for the animation part.
@@ -65,7 +65,7 @@ public class BugsBunny3 extends Animal
         }
         
         // If the user clicks this bugs bunny while it is standing, play a
-        // sound, decrease the score by 3. 
+        // sound, decrease the score by 3, and set the boolean to be true. 
         if(Greenfoot.mouseClicked(this))
         {
             // Play the sound "Cut It Out" by Bugs Bunny.
@@ -93,7 +93,12 @@ public class BugsBunny3 extends Animal
         }
     }
     
+    // The image index of the array is initialized.
     int imageIndex = 0;
+    /**
+     * This method animates the bunny. It will animate it to look like it's been 
+     * "hammered down" and squashed (since it was whacked).
+     */
     public void animateBugsBunny3()
     {
         // Get the gameWorld.
