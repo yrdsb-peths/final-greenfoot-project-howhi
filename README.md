@@ -29,7 +29,7 @@ One quick final note: a constantly animating mole will also be showing on the Ti
 ---
 
 
-<h2><ins>Citations/Credits for Sounds/Images/Websites Used<ins></h2>
+<h3><ins>Citations/Credits for Sounds/Images/Websites Used<ins></h3>
 
 
 
