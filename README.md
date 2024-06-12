@@ -33,7 +33,7 @@ One quick final note: a constantly animating mole will also be showing on the Ti
 
 
 
-[Mole animation sprites] (https://www.behance.net/gallery/62880791/Whack-A-Mole-Game).
+[Mole animation sprites](https://www.behance.net/gallery/62880791/Whack-A-Mole-Game).
 
 
 [TitleScreen and GameEndsWorld Background] (https://www.istockphoto.com/photos/cartoon-grass). 
