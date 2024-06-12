@@ -13,7 +13,7 @@ public class MyWorld extends World
      * and a sound is created.
      */
     
-    // The int that determines how long the next mole will pop up.
+    // The int that determines when the next mole or bunny will pop up (in milliseconds).
     public int timerDiceRoll;
     
     // The timer that times the timerDiceRoll variable.
@@ -46,7 +46,6 @@ public class MyWorld extends World
     // This is the label that shows the current time value.
     Label currentTimeValue;
     
-    
     // This is the boolean that returns whether or not a mole or bugs bunny
     // is animating.
     boolean aMoleIsAnimating;
@@ -55,17 +54,16 @@ public class MyWorld extends World
     // in the act() method.
     boolean isTrue;
     
-    // This initialized a new gameEndsWorld.
+    // This initializes a new GameEndsWorld world.
     GameEndsWorld gameEndsWorld = new GameEndsWorld();
     
     // Created a GreenfootSound for the background music that is to be played
     // throughout gameplay.
     GreenfootSound gameWorldBackgroundMusic = new GreenfootSound("Background Music GameWorld.mp3");
     /**
-     * The constructor for MyWorld(). A world is created, the time value, score,
+     * The constructor for MyWorld(). The world is created, the time value, score,
      * level, and booleans are initialzied. Labels are added. Timers are marked. 
-     * timerDiceRoll is initialized, and the hiddenMoles are added to the world
-     * to start.
+     * The int timerDiceRoll is initialized, and the HiddenMoles are added to the world.
      */
     public MyWorld()
     {    
@@ -73,7 +71,7 @@ public class MyWorld extends World
         super(600, 400, 1);
         
         // Initialized the time, the score, and the level. *Note: "score" is
-        // a variable as part of the GameEndsWorld class in order to show it in
+        // a variable part of the GameEndsWorld class in order to show it in
         // that world when the game is over.
         time = 90;
         gameEndsWorld.score = 0;
@@ -83,15 +81,20 @@ public class MyWorld extends World
         aMoleIsAnimating = false;
         isTrue = true;
         
-        // Add the score labels and time labels to the world.
+        /*
+         * The following 4 labels are created and added to the world.
+         */
         scoreLabel = new Label("Score: ", 50);
         addObject(scoreLabel, getWidth() / 5, 40);
+        
+        // Set the currentScoreValue to the current score.
         currentScoreValue = new Label(gameEndsWorld.score, 50);
         addObject(currentScoreValue, 210, 40);
         
         currentTimeLabel = new Label("Time: ", 50);
         addObject(currentTimeLabel, getWidth() * 3 / 4, 40);
         
+        // Set the currentTimeValue to the current time.
         currentTimeValue = new Label(time, 50);
         addObject(currentTimeValue, 530, 40);
         
@@ -101,7 +104,8 @@ public class MyWorld extends World
         // Marked the current time timer.
         currentTimeTimer.mark();
         
-        // Initialized timerDiceRoll to be a random number from 0 - 4999.
+        // Initialized timerDiceRoll to be a random number from 0 - 4999 (inclusive)
+        // similar to rolling a dice.
         timerDiceRoll = Greenfoot.getRandomNumber(5000);
         
         // Prepared/added the hiddenMoles to the world.
@@ -117,20 +121,19 @@ public class MyWorld extends World
     {
         // Play the background music for the game. Ensured volume is lower than
         // other two worlds so the moles clicked sound and bugs bunny clicked 
-        // sound can be heard.
+        // sound can be heard sufficiently.
         gameWorldBackgroundMusic.setVolume(20);
         gameWorldBackgroundMusic.play();
         
-        // Set the timerDiceRoll to be a random number between 0 - 4999.
-        // Used boolean to ensure timerDiceRoll is a randomized number (so it
-        // always varies).
+        // Set the timerDiceRoll to be a random number between 0 - 4999 (inclusive).
+        // Used boolean to ensure timerDiceRoll is constantly being randomized.
         while(isTrue == true)
         {
             timerDiceRoll = Greenfoot.getRandomNumber(5000);
             isTrue = false;
         }
         
-        // After one second, decrease the time by one second.
+        // After every second of gameplay, decrease the time by one second.
         if(currentTimeTimer.millisElapsed() > 1000)
         {
             decreaseTime();
@@ -149,31 +152,30 @@ public class MyWorld extends World
             // Stop the background music.
             gameWorldBackgroundMusic.stop();
             
-            // Change to the gameEndsWorld, indicating the game is over.
+            // Change to the gameEndsWorld world.
             GameEndsWorld gameEndsWorld = new GameEndsWorld();
             Greenfoot.setWorld(gameEndsWorld);
         }
         
         /**
-         * This if statement control structure shows the moles and bugs bunnies.
-         * Only if all the moles/bunnies are hidden (no moles/bunnies are showing
-         * or being clicked) and when the time that has passed, in milliseconds,
-         * is greater than the random int from 0 - 4999, then a new mole will pop up.
+         * This if statement control structure controls when and where the moles and bugs bunnies appear.
+         * Only if all the moles/bunnies are hidden (no moles/bunnies are showing) and when the time that has passed, in milliseconds,
+         * is greater than the random int from 0 - 4999, then a new mole or bunny will pop up. Only one mole or bunny 
+         * appears at a time.
          */
         if(aMoleIsAnimating == false && diceRollTimer.millisElapsed() > timerDiceRoll)
         {
             // Mark the diceRollTimer.
             diceRollTimer.mark();
             
-            // A mole or bunny is animating is true so this if statement does
-            // loop all the time.
+            // A mole or bunny is animating is true.
             aMoleIsAnimating = true;
             
-            // Get a random number between 0 and 6.
+            // Get a random number from 0 and 6 (inclusive).
             moleDiceRoll = Greenfoot.getRandomNumber(7);
             
             // According to the moleDiceRoll number, make one of the moles appear.
-            // Each mole is at a different location in the world.
+            // Each mole will appear at a different location in the world.
             if(moleDiceRoll == 0)
             {
                 removeHiddenMole2();
@@ -207,11 +209,11 @@ public class MyWorld extends World
             // If the random moleDiceRoll equals 6, then make a bugs bunny appear.
             else if(moleDiceRoll == 6)
             {
-                // Roll another dice to get another random number between 0 and 5.
+                // Get another random number between 0 and 5.
                 bugsBunnyDiceRoll = Greenfoot.getRandomNumber(6);
                 
                 // Again, depending on the diceRoll, generate the appropriate bugs bunny.
-                // Each bugs bunny is at a different location in the world.
+                // Each bugs bunny will appear at a different location in the world.
                 if(bugsBunnyDiceRoll == 0)
                 {
                     removeHiddenMole2();
@@ -243,9 +245,10 @@ public class MyWorld extends World
                     generateBugsBunny6();
                 }
             }
-            // Once the bunny or mole that has been generated has finished
-            // animating, set isTrue to true so that another random number for
-            // timerDiceRoll will be set.
+            // Once the bunny or mole that has been generated has finished animating
+            // (if clicked on) or has gone back to being hidden because the user failed
+            // to click on it in time, set isTrue to true so that another random number for
+            // timerDiceRoll can be set.
             isTrue = true;
         }
     }
@@ -253,7 +256,7 @@ public class MyWorld extends World
     
     /**
      * This method increases the score. It sets the value of the currentScoreValue
-     * label to the score and also increases the level if the score is a 
+     * label to the updated score and also increases the level if the score is a 
      * multiple of 5.
      */
     public void increaseScore()
@@ -274,7 +277,7 @@ public class MyWorld extends World
     
     /**
      * This method decreases the score by 3 and sets the currentScoreValue label
-     * to the score.
+     * to the updated score.
      */
     public void decreaseScoreBy3()
     {
@@ -286,7 +289,7 @@ public class MyWorld extends World
     }
     
     /**
-     * This method decreases the time by 1 and sets the currentTimeValue to the time.
+     * This method decreases the time by 1 and sets the currentTimeValue to the updated time.
      */
     public void decreaseTime()
     {
@@ -299,8 +302,8 @@ public class MyWorld extends World
     
     
     /**
-     * The following methods that start with "generate" creates the moles and
-     * bunnies and adds them to the world, not hiding.
+     * The following methods whose names start with "generate" creates the "showing" moles and
+     * bunnies and adds them to the world at different locations.
      */
     public void generateBugsBunny1()
     {
@@ -386,7 +389,7 @@ public class MyWorld extends World
     HiddenMole hiddenMole7 = new HiddenMole();
     
     /**
-     * The following methods adds the appropriate hiddenMole to the world.
+     * The following methods adds the hiddenMoles to the world at different locations (same as above methods' locations).
      */
     public void addHiddenMole2()
     {
