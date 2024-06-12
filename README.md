@@ -20,7 +20,7 @@ The user must try to click on as many moles as they can within 90 seconds (one a
 
 Here, the score that was obtained by the player is shown. The best score (high score) of the current session is also shown. Lastly, instructions on the screen will indicate that pressing the *enter* key will replay the game. 
 
-Music will always be playing during all three worlds. The TitleScreen and GameEndsWorld background picture and music are the same, while the MyWorld background and music will be different (the MyWorld music will also be lower in volume than the other two worlds so the sounds of the moles and the bunnies can be heard).
+Music will always be playing during all three worlds. The TitleScreen and GameEndsWorld background picture and music are the same, while the MyWorld background picture and music will be different (the MyWorld music will also be lower in volume than the other two worlds so the sounds of the moles and the bunnies can be heard).
 
 One quick final note - a constantly animating mole will be showing on the TitleScreen and GameEndsWorld. This is for appeal.
 
