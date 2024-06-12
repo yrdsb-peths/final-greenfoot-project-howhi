@@ -38,8 +38,7 @@ One quick final note: a constantly animating mole will also be showing on the Ti
 [TitleScreen and GameEndsWorld Background](https://www.istockphoto.com/photos/cartoon-grass) 
 
 
-[Sprite sheet cutter (for both moles and bugs bunny
-)](https://ezgif.com/)
+[Sprite sheet cutter (for both moles and bugs bunny)](https://ezgif.com/)
 
 
 [MyWorld Background](https://www.pinterest.com/pin/358317714080617664/)
