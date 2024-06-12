@@ -16,13 +16,13 @@ The user plays the game on the MyWorld world. Six identical “hidden moles” (they
 
 The moles and bunny will always appear in a time frame between 0 and 5 seconds after one has been clicked or after one showed but didn’t get clicked on. Levels are also in play here, too. For every 5 points, the level goes up, and the time it takes for a user to click a mole once it has appeared decreases by half a second (the time to click a bunny doesn’t change at all).
 
-The user must try to click on as many moles as they can within 90 seconds (one and a half minutes). The player’s score and the time left in the game are shown in the MyWorld world as the user is playing. Once the 90 seconds are up, the world is then set to the GameEndsWorld, the final world.
+The user must try to click on as many moles as they can within 90 seconds (one and a half minutes). The player’s score and the time left in the game are shown in the MyWorld world as the user is playing. Once the 90 seconds are up, the screen is then set to the GameEndsWorld, the final world, indicating the game is over.
 
 Here, the score that was obtained by the player is shown. The best score (high score) of the current session is also shown. Lastly, instructions on the screen will indicate that pressing the *enter* key will replay the game. 
 
-Music will always be playing in the background during all three worlds. The TitleScreen and GameEndsWorld background and music are the same, while the MyWorld background and music will be different (music will also be lower in volume).
+Music will always be playing during all three worlds. The TitleScreen and GameEndsWorld background picture and music are the same, while the MyWorld background and music will be different (the MyWorld music will also be lower in volume than the other two worlds so the sounds of the moles and the bunnies can be heard).
 
-One quick final note: a constantly animating mole will also be showing on the TitleScreen and GameEndsWorld. This is mostly for appeal.
+One quick final note - a constantly animating mole will be showing on the TitleScreen and GameEndsWorld. This is for appeal.
 
 
 ---
