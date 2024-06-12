@@ -18,7 +18,7 @@ public class GameEndsWorld extends World
     // Created a static int variable to store the high score.
     public static int highScore;
     /**
-     * The constructor for the GameEndsWorld world. A world is created, labels
+     * The constructor for the GameEndsWorld world. A world is created, labels and instruction labels
      * are added, and the animated mole from the TitleScreen is brought back.
      */
     public GameEndsWorld()
@@ -26,7 +26,7 @@ public class GameEndsWorld extends World
         // Create a new world with 600x340 cells with a cell size of 1x1 pixels.
         super(600, 340, 1); 
         
-        // Created and added label to indicate the game is over.
+        // Created and added a label to indicate the game is over.
         Label gameEndsLabel = new Label("Game. Is. Over.", 100);
         addObject(gameEndsLabel, getWidth() / 2, getHeight() * 1 / 4);
         
@@ -48,7 +48,7 @@ public class GameEndsWorld extends World
         Label currentScoreLabel = new Label(score, 40);
         addObject(currentScoreLabel, 220, getHeight() * 5 / 8);
         
-        // Created and added label to show the highScore obtained in the
+        // Created and added label to show the highest score obtained in the
         // current session.
         Label currentHighScoreLabel = new Label(highScore, 40);
         addObject(currentHighScoreLabel, 555, getHeight() * 5 / 8);
@@ -61,18 +61,21 @@ public class GameEndsWorld extends World
     
     public void act()
     {
-        // Play the background music for the game. Set the volume to the same
+        // Play the background music for the game. Set the volume to the same volume
         // as the TitleScreen world.
         titleScreenGameEndsMusic.setVolume(40);
         titleScreenGameEndsMusic.play();
         
-        // If the user presses <enter>, the score is to be reset, music for this
-        // world is to stop playing and the world is to be set to MyWorld again.
-        // In other words, if <enter> is pressed, the game is to be replayed.
+        // If the user presses <enter>, the game is to be replayed.
         if(Greenfoot.isKeyDown("enter"))
         {
+            // The static int variable "score" is reset to zero
             score = 0;
+            
+            // This world's background music is stopped
             titleScreenGameEndsMusic.stop();
+            
+            // The world is set to MyWorld again
             MyWorld gameWorld = new MyWorld();            
             Greenfoot.setWorld(gameWorld);
         }
