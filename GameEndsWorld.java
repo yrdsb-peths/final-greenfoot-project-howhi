@@ -63,7 +63,7 @@ public class GameEndsWorld extends World
     {
         // Play the background music for the game. Set the volume to the same
         // as the TitleScreen world.
-        titleScreenGameEndsMusic.setVolume(50);
+        titleScreenGameEndsMusic.setVolume(40);
         titleScreenGameEndsMusic.play();
         
         // If the user presses <enter>, the score is to be reset, music for this

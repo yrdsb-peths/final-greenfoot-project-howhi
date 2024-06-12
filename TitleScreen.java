@@ -42,7 +42,7 @@ public class TitleScreen extends World
     public void act()
     {        
         // Play the background music all the time while in this world.
-        titleScreenGameEndsMusic.setVolume(50);
+        titleScreenGameEndsMusic.setVolume(40);
         titleScreenGameEndsMusic.play();
     
         // After two seconds, remove titleLabel and add instructions.

@@ -115,8 +115,9 @@ public class MyWorld extends World
     
     public void act()
     {
-        // Play the background music for the game. Ensured volume is lower so
-        // moles clicked sound and bugs bunny clicked sound can be heard.
+        // Play the background music for the game. Ensured volume is lower than
+        // other two worlds so the moles clicked sound and bugs bunny clicked 
+        // sound can be heard.
         gameWorldBackgroundMusic.setVolume(20);
         gameWorldBackgroundMusic.play();
         
