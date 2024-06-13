@@ -60,8 +60,9 @@ public class MyWorld extends World
     // Created a GreenfootSound for the background music that is to be played
     // throughout gameplay.
     GreenfootSound gameWorldBackgroundMusic = new GreenfootSound("Background Music GameWorld.mp3");
+    
     /**
-     * The constructor for MyWorld(). The world is created, the time value, score,
+     * The constructor for the MyWorld world. The world is created, the time value, score,
      * level, and booleans are initialzied. Labels are added. Timers are marked. 
      * The int timerDiceRoll is initialized, and the HiddenMoles are added to the world.
      */
@@ -97,6 +98,8 @@ public class MyWorld extends World
         // Set the currentTimeValue to the current time.
         currentTimeValue = new Label(time, 50);
         addObject(currentTimeValue, 530, 40);
+        
+        
         
         // Marked the diceRollTimer.
         diceRollTimer.mark();
@@ -174,7 +177,8 @@ public class MyWorld extends World
             // Get a random number from 0 and 6 (inclusive).
             moleDiceRoll = Greenfoot.getRandomNumber(7);
             
-            // According to the moleDiceRoll number, make one of the moles appear.
+            // According to the moleDiceRoll number, make one of the moles appear
+            // and remove the hiddenMole that the appearing mole replaces.
             // Each mole will appear at a different location in the world.
             if(moleDiceRoll == 0)
             {

@@ -17,6 +17,7 @@ public class GameEndsWorld extends World
     
     // Created a static int variable to store the high score.
     public static int highScore;
+    
     /**
      * The constructor for the GameEndsWorld world. A world is created, labels and instruction labels
      * are added, and the animated mole from the TitleScreen is brought back.

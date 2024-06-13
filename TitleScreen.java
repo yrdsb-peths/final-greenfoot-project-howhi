@@ -17,6 +17,7 @@ public class TitleScreen extends World
     
     // The first title to be shown when running the game.
     Label titleLabel = new Label("Connor's\nWhac-a-Mole!", 75);
+    
     /**
      * The constructor for the TitleScreen World. Create the world, create and
      * add the animated mole to the world, create and add the title "titleLabel"
@@ -46,7 +47,10 @@ public class TitleScreen extends World
         titleScreenGameEndsMusic.setVolume(40);
         titleScreenGameEndsMusic.play();
     
-        // Two seconds after pressing "Run", remove titleLabel and add instructions.
+        /*
+         * Two seconds after pressing "Run", remove titleLabel and add
+         * the following 3 label instructions
+         */
         if(instructionsTimer.millisElapsed() < 2000)
         {
             return;
@@ -60,6 +64,7 @@ public class TitleScreen extends World
         
         Label startGameLabel = new Label("Press <enter> to start", 28);
         addObject(startGameLabel, getWidth() / 2, 275);
+        
         
         
         // If user presses <enter>
