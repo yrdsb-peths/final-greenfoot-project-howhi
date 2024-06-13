@@ -136,7 +136,7 @@ public class Mole5 extends Animal
             // so it only animates once.
             mole5IsAnimating = false;
             
-            // Set the image of the mole to the image index of the array of images
+            // Set the image of this mole to the last image of the array.
             setImage(mole5Animation[8]);
             
             // Remove this object.

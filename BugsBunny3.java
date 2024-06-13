@@ -105,7 +105,7 @@ public class BugsBunny3 extends Animal
         MyWorld gameWorld = (MyWorld) getWorld();
         
         // If the bugs bunny timer is less than 300 milliseconds, then return
-        // out of this loop.
+        // out of this method.
         if(bugsBunnyTimer3.millisElapsed() < 300)
         {
             return;
