@@ -16,7 +16,7 @@ public class TitleScreen extends World
     GreenfootSound titleScreenGameEndsMusic = new GreenfootSound("Background Music TitleScreen & GameEndsWorld.mp3");
     
     // The first title to be shown when running the game.
-    Label titleLabel = new Label("Connor's\nWhac-a-Mole!", 75);
+    Label titleLabel = new Label("Connor's\nWhac-A-Mole!", 75);
     
     /**
      * The constructor for the TitleScreen World. Create the world, create and
