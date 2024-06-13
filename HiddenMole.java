@@ -1,23 +1,25 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * One of the moles to hit/click on.
+ * A mole that is hiding in its burrow.
  * 
  * @author Ho 
  * @version May 2024
  */
 public class HiddenMole extends Animal
 {
-    GreenfootImage[] mole2Animation = new GreenfootImage[9];
+    // Created a new GreenfootImage.
+    GreenfootImage hiddenMoleImage = new GreenfootImage("images/mole_Hidden.png");
     
+    
+    /**
+     * The constructor for HiddenMole. Here, the image above is scaled to an 
+     * appropriate size and then this actor's image is set to that scaled image.
+     */
     public HiddenMole()
     {
-        for(int i = 0; i < mole2Animation.length; i++)
-        {
-            mole2Animation[i] = new GreenfootImage("images/Mole_Animate/mole_animate" + i + ".png");
-            mole2Animation[i].scale(100, 75);
-        }
-        
-        setImage(mole2Animation[8]);
+        hiddenMoleImage.scale(100, 75);
+
+        setImage(hiddenMoleImage);
     }
 }
