@@ -15,8 +15,9 @@ public class GameEndsWorld extends World
     // Created a static int variable to store the score.
     public static int score;
     
-    // Created a static int variable to store the high score.
-    public static int highScore;
+    // Created a static int variable to store the high score. Initialized it to
+    // Java's minimum int value (so even negative scores can be a high score).
+    public static int highScore = -2147483648;
     
     /**
      * The constructor for the GameEndsWorld world. A world is created, labels and instruction labels
