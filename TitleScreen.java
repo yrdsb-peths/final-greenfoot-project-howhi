@@ -30,10 +30,10 @@ public class TitleScreen extends World
         
         // Creating and adding an animated mole on the titleScreen.
         Mole1 mole1 = new Mole1();
-        addObject(mole1, getWidth() / 2, 225);
+        addObject(mole1, getWidth() / 2, 230);
         
         // Adding titleLabel to TitleScreen world.
-        addObject(titleLabel, getWidth() / 2, 125);   
+        addObject(titleLabel, getWidth() / 2, 110);   
         
         // Marking instructionsTimer.
         instructionsTimer.mark();
